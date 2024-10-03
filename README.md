@@ -1,13 +1,6 @@
-# 🎬 James Bond movies
+# Chart templates
 
-This is one of my first projects learning D3 and Svelte.
-
-## 🗄️ Data
-
-- [Wikipedia](https://en.wikipedia.org/wiki/List_of_James_Bond_films)
-- [IMDB](https://www.imdb.com/list/ls006405458/)
-- [Rotten Tomatoes](https://www.rottentomatoes.com/franchise/james_bond_007)
-- [Spotify](https://developer.spotify.com/documentation/web-api)
+Creating standard charts with D3, Svelte and LayerCake
 
 ## 👋 About Me
 
