@@ -36,13 +36,3 @@ export const stackedColumnConfig = {
   custom,
   xScale: scaleBand().paddingInner(0.05)
 }
-
-// "vertiStackedColumn": {
-//     "data": "stackedData",
-//     "x": "key",
-//     "y": "value",
-//     "xScale": "scaleBand().paddingInner(0.05)",
-//     "yDomain": "[0, MaxDomain]",
-//     "padding":"padding",
-//     "custom": "custom"
-// }

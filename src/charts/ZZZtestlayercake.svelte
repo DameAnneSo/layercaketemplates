@@ -1,6 +1,6 @@
 <script>
   import { LayerCake } from 'layercake'
-  import {stackedColumnConfig} from './chartConfigs.js'
+  import {stackedColumnConfig} from './ZZZchartConfigs.js'
   import Scatterplot from '../graphics/scatterplot.svelte'
   import AxisX from '../graphics/axisX.svelte'
   import AxisY from '../graphics/axisY.svelte'
