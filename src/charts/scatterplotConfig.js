@@ -20,6 +20,8 @@ export const scatterplotConfig = {
   data: scatterplotData,
   x: "key",
   y: "value",
+  xDomain: [0, null],
+  yDomain: [0, null],
   padding,
   custom,
 };

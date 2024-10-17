@@ -2,34 +2,35 @@
   import { LayerCake } from "layercake";
   import { scatterplotConfig } from "./scatterplotConfig.js";
   import Scatterplot from "../graphics/scatterplot.svelte";
+  import AxisX from "../graphics/axisX.svelte";
+  import AxisY from "../graphics/axisY.svelte";
 
   const newData = [
     { key: 0.5, value: 0.5, category: "cat" },
     { key: 1, value: 1, category: "dog" },
-    { key: 2, value: 2, category: "dog" },
+    { key: 2, value: 5, category: "dog" },
     { key: 3, value: 5, category: "dog" },
     { key: 4, value: 4, category: "cat" },
-    { key: 5, value: 3, category: "cat" },
+    { key: 5, value: 12, category: "cat" },
   ];
 
-  // // Custom functions
-  // const colorFunction = (d) => {
-  //   // if first category then red, else blue
-  //   return d.category === scatterplotConfig.data[0].category ? "red" : "blue";
-  // };
-  
-  const custom = {
-    colorFunction,
-    // fill: 'teal' //for one color only
-    // ,stroke: 'purple' -- for line charts
+  //// Custom functions
+  const colorFunction = (d) => {
+    // if first category then red, else blue
+    return d.category === scatterplotConfig.data[0].category ? "red" : "blue";
   };
 
-  // Configuration
+  const custom = {
+    colorFunction,
+  };
+
+  //// Configuration
   const config = {
     ...scatterplotConfig,
+    //// uncomment to switch  to newData
     // data: newData,
-    // yDomain: [0, MaxDomain],
-    custom
+    //// uncomment if you don't need any custom function
+    custom,
   };
 
   // console.log(scatterplotConfig);
@@ -37,8 +38,8 @@
 
 <div class="chart-container">
   <LayerCake {...config} debug={false}>
-    <!-- <AxisX />
-    <AxisY /> -->
+    <AxisX />
+    <AxisY />
     <Scatterplot />
   </LayerCake>
 </div>

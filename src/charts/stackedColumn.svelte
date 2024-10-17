@@ -15,14 +15,14 @@
     { key: 3, value: 0, category: "dog" },
   ];
 
-  // replace stackedColumnConfig.data with newStackedData
+  //// replace stackedColumnConfig.data with newStackedData
   const MaxDomain =
     stackedColumnConfig.custom.calculateMaxDomain(stackedColumnConfig.data);
 
-  // Custom functions
-  // replace stackedColumnConfig.data with newStackedData
+  //// (Optional) Custom functions 
+  //// replace stackedColumnConfig.data with newStackedData
   const colorFunction = (d) => {
-    // if first category then red, else blue
+    //// if first category then red, else blue
     return d.category === stackedColumnConfig.data[0].category ? "red" : "blue";
   };
   const custom = {
@@ -31,13 +31,13 @@
 
   const config = {
     ...stackedColumnConfig,
-     // specify newStackedData
+     //// uncomment to switch to newStackedData
     // data: newStackedData, 
     yDomain: [0, MaxDomain],
     custom,
   };
 
-  // Troubleshooting
+  //// Troubleshooting
   // console.log(stackedColumnConfig);
 </script>
 

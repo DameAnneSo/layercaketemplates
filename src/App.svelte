@@ -1,11 +1,9 @@
 <script>
   import Testlayercake from "./charts/ZZZtestlayercake.svelte";
   import StackedColumn from "./charts/stackedColumn.svelte";
-  import StackedBar from "./graphics/stackedBar.svelte";
-  import Scatterplot from "./graphics/scatterplot.svelte";
-  import Line from "./graphics/line.svelte";
-  import Column from "./graphics/column.svelte";
-  import Bar from "./graphics/bar.svelte";
+  import StackedBar from "./charts/stackedBar.svelte";
+  import Scatterplot from "./charts/scatterplot.svelte";
+
 
 </script>
 

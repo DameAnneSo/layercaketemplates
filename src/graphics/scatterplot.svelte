@@ -6,6 +6,7 @@
   // Note2: our accessor functions and then our scale functions are stored in the LayerCake context. We can access them with $xGet and $yGet but a long way to write is to access x, xScale and then $xScale($x(d)) instead of $xGet(d) etc.
   const { data, xGet, yGet, width, height, custom } = getContext('LayerCake')
 
+
   // console.log($data)
   // $: console.log($width, $height)
 </script>
