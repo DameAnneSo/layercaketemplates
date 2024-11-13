@@ -7,12 +7,12 @@
   import StackedBar from "../graphics/stackedBar.svelte";
 
   const newStackedData = [
-    { key: 1, value: 12, category: "cat" },
-    { key: 1, value: 1, category: "dog" },
-    { key: 2, value: 2, category: "dog" },
-    { key: 2, value: 5, category: "cat" },
-    { key: 3, value: 4, category: "cat" },
-    { key: 3, value: 0, category: "dog" },
+    { key: "owner1", value: 12, category: "cat" },
+    { key: "owner1", value: 1, category: "dog" },
+    { key: "owner2", value: 2, category: "dog" },
+    { key: "owner2", value: 5, category: "cat" },
+    { key: "owner3", value: 4, category: "cat" },
+    { key: "owner3", value: 0, category: "dog" },
   ];
 
   // replace stackedBarConfig.data with newStackedData
@@ -32,7 +32,7 @@
   const config = {
     ...stackedBarConfig,
      // specify newStackedData
-    // data: newStackedData,
+    data: newStackedData,
     xDomain: [0, MaxDomain],
     custom,
   };

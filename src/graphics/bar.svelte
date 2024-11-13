@@ -1,6 +1,9 @@
 <script>
   import { getContext } from 'svelte'
   import { Svg } from 'layercake'
+  // import { stack } from 'd3-shape'
+  // import { index } from 'd3-array'
+   import { scaleBand } from "d3-scale";
 
   const { data, xGet, yGet, xScale, yScale, width, height, custom } = getContext('LayerCake')
 </script>
@@ -20,6 +23,3 @@
     {/each}
   </g>
 </Svg>
-
-<style>
-</style>

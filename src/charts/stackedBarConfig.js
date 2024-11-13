@@ -10,18 +10,18 @@ const custom = {
 };
 
 const stackedData = [
-  { key: 1, value: 1, category: "cat" },
-  { key: 1, value: 1, category: "dog" },
-  { key: 2, value: 2, category: "dog" },
-  { key: 2, value: 12, category: "cat" },
-  { key: 3, value: 4, category: "cat" },
-  { key: 3, value: 0, category: "dog" },
+  { key: "owner1", value: 1, category: "cat" },
+  { key: "owner1", value: 1, category: "dog" },
+  { key: "owner2", value: 2, category: "dog" },
+  { key: "owner2", value: 12, category: "cat" },
+  { key: "owner3", value: 4, category: "cat" },
+  { key: "owner3", value: 0, category: "dog" },
 ];
 
 export const stackedBarConfig = {
   data: stackedData,
-  x: "key",
-  y: "value",
+  y: "key",
+  x: "value",
   xDomain: [0, null], // null needs to be fixed with a maxDomain to not overflow
   padding,
   custom,

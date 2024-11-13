@@ -38,7 +38,7 @@
 
 <div class="chart-container">
   <LayerCake {...config} debug={false}>
-    <AxisX />
+    <AxisX ticks={20} pinkCircle={true}/>
     <AxisY />
     <Scatterplot />
   </LayerCake>

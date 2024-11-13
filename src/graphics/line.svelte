@@ -1,7 +1,7 @@
 <script>
   import { getContext } from 'svelte'
   import { Svg, uniques } from 'layercake'
-  import { line, curveLinear } from 'd3-shape'
+  import { line, curveLinear} from 'd3-shape'
 
   const { data, xGet, yGet, width, height, custom } = getContext('LayerCake')
 
@@ -13,6 +13,7 @@
     .x(d => $xGet(d))
     .y(d => $yGet(d))
     .curve($custom.curve ? $custom.curve : curveLinear)
+    // .curve(curveStep)
 
   // De la donnee brute a la donnee pour la ligne
   const renderPath = () => {
@@ -22,7 +23,7 @@
       return { path, category }
     })
     // console.log(categories)
-    console.log(lineData)
+    // console.log(lineData)
   }
 
   // à chaque fois que data, width ou height change, on recalcule le path
@@ -40,6 +41,3 @@
   }
 </style>
 
-<!-- 1 boucle pour les lignes (de proprio)
- 1 boucle pour chaque bar
-  -->

@@ -38,7 +38,3 @@
     {/each}
   {/each}
 </Svg>
-
-<style>
-  
-</style>
