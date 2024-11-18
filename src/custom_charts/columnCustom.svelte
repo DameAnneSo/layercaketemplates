@@ -1,6 +1,6 @@
 <script>
   import { LayerCake } from "layercake";
-  import { columnConfig } from "./columnConfig.js";
+  import { columnConfig } from "../config_charts/columnConfig.js";
 
   import AxisX from "../graphics/axisX.svelte";
   import AxisY from "../graphics/axisY.svelte";
@@ -39,7 +39,7 @@
 
 <div class="chart-container">
   <LayerCake {...config} debug={false}>
-    <AxisX pinkCircle={false} />
+    <AxisX pinkCircle={false} tickMarks={false}/>
     <AxisY ticks={10} />
     <Column />
   </LayerCake>

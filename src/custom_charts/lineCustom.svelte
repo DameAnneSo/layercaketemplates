@@ -1,6 +1,6 @@
 <script>
   import { LayerCake } from "layercake";
-  import { lineConfig } from "./lineConfig.js";
+  import { lineConfig } from "../config_charts/lineConfig.js";
   import { curveStep } from "d3-shape";
 
   import AxisX from "../graphics/axisX.svelte";

@@ -1,6 +1,6 @@
 <script>
   import { LayerCake } from "layercake";
-  import { scatterplotConfig } from "./scatterplotConfig.js";
+  import { scatterplotConfig } from "../config_charts/scatterplotConfig.js";
   import Scatterplot from "../graphics/scatterplot.svelte";
   import AxisX from "../graphics/axisX.svelte";
   import AxisY from "../graphics/axisY.svelte";
@@ -38,8 +38,8 @@
 
 <div class="chart-container">
   <LayerCake {...config} debug={false}>
-    <AxisX ticks={20} pinkCircle={true}/>
-    <AxisY />
+    <AxisX ticks={5} pinkCircle={true} gridlines={true}/>
+    <AxisY gridlines={true}/>
     <Scatterplot />
   </LayerCake>
 </div>

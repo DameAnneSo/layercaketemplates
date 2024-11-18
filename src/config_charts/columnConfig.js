@@ -22,3 +22,4 @@ export const columnConfig = {
   yDomain: [0, null], // null needs to be fixed with a maxDomain to not overflow
   padding,
 };
+

@@ -1,6 +1,6 @@
 <script>
   import { LayerCake } from "layercake";
-  import { stackedBarConfig } from "./stackedBarConfig.js";
+  import { stackedBarConfig } from "../config_charts/stackedBarConfig.js";
 
   import AxisX from "../graphics/axisX.svelte";
   import AxisY from "../graphics/axisY.svelte";
@@ -44,7 +44,7 @@
 <div class="chart-container">
   <LayerCake {...config} debug={false}>
     <AxisX />
-    <AxisY />
+    <AxisY tickMarks={false}/>
     <StackedBar />
   </LayerCake>
 </div>

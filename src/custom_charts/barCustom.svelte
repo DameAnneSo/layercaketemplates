@@ -1,6 +1,6 @@
 <script>
   import { LayerCake } from "layercake";
-  import { barConfig } from "./barConfig.js";
+  import { barConfig } from "../config_charts/barConfig.js";
   import AxisX from "../graphics/axisX.svelte";
   import AxisY from "../graphics/axisY.svelte";
   import Bar from "../graphics/bar.svelte";
@@ -40,7 +40,7 @@ const custom = {
 <div class="chart-container">
   <LayerCake {...config} debug={false}>
     <AxisX ticks={10} pinkCircle={false} />
-    <AxisY />
+    <AxisY tickMarks={false}/>
     <Bar />
   </LayerCake>
 </div>

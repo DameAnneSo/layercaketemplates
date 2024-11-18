@@ -1,6 +1,6 @@
 <script>
   import { LayerCake } from "layercake";
-  import { stackedColumnConfig } from "./stackedColumnConfig.js";
+  import { stackedColumnConfig } from "../config_charts/stackedColumnConfig";
 
   import AxisX from "../graphics/axisX.svelte";
   import AxisY from "../graphics/axisY.svelte";
@@ -43,7 +43,7 @@
 
 <div class="chart-container">
   <LayerCake {...config} debug={false}>
-    <AxisX />
+    <AxisX tickMarks={false}//>
     <AxisY />
     <StackedColumn />
   </LayerCake>
