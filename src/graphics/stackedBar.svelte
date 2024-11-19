@@ -20,7 +20,7 @@
 		const keys = uniques($data.map((d) => d.category));
 		stackGenerator.keys(keys);
 		stackedData = stackGenerator(indexedData);
-		console.log(stackedData);
+		// console.log(stackedData);
 	};
 
 	$: $width, $height, $data, renderBars();
@@ -29,7 +29,7 @@
 <Svg>
 	{#each stackedData as categoryData}
 		{#each categoryData as categoryDatum}
-			{console.log(categoryDatum.data[0])}
+			<!-- {console.log(categoryDatum.data[0])} -->
 			<rect
 				x={$xScale(categoryDatum[0])}
 				width={$xScale(categoryDatum[1]) - $xScale(categoryDatum[0])}
