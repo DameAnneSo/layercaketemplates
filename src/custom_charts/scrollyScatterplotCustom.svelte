@@ -1,7 +1,7 @@
 <script>
   import { LayerCake } from "layercake";
   import { scatterplotConfig } from "../config_charts/scatterplotConfig.js";
-  import Scatterplot from "../graphics/scatterplot.svelte";
+  import ScrollyScatterplot from "../graphics/scrollyScatterplot.svelte";
   import AxisX from "../graphics/axisX.svelte";
   import AxisY from "../graphics/axisY.svelte";
 
@@ -36,36 +36,29 @@
   // console.log(scatterplotConfig);
 </script>
 
-<h2>The scatterplot</h2>
+<div class="page-column">
 <div class="chart-container">
   <LayerCake {...config} debug={false}>
     <AxisX ticks={5} pinkCircle={true} gridlines={true}/>
     <AxisY gridlines={true}/>
-    <Scatterplot />
+    <ScrollyScatterplot />
   </LayerCake>
 </div>
+</div>
 
-<!-- 
-TO DO LIST:
-Dont understand the intro of LayerCake props 
- https://layercake.graphics/guide#layercake-props
-
- Padding: doesn that mean we forget about margin top, bottom, left, right?
-
- Re-read the section about xPadding and xNice and position
-
-note for later: aspectRatio: c'est le truc dont j'ai besoin pour changer layout mobile/desktop!!!
-
-re-read ScaledSvg, 
-
--->
 
 <style>
-  /*
-    The wrapper div needs to have an explicit width and height in CSS.
-  */
+
+  .page-column {
+  /* background-color:grey;  */
+  height:100%;
+  display:grid; 
+  place-items:center;
+  }
+
   .chart-container {
     height: 20rem;
     width: 100%;
+    padding: 0rem 1rem;
   }
 </style>

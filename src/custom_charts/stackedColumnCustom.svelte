@@ -41,6 +41,7 @@
   // console.log(stackedColumnConfig);
 </script>
 
+<h2>The stacked column chart</h2>
 <div class="chart-container">
   <LayerCake {...config} debug={false}>
     <AxisX tickMarks={false}//>

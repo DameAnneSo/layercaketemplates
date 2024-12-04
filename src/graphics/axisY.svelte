@@ -122,11 +122,11 @@
   }
 
   .tick line {
-    stroke: #aaa;
+    stroke: var(--red-dark);
   }
 
   .tick text {
-    fill: #666;
+    fill: var(--red-dark);
   }
 
   .tick.tick-0 line {
@@ -135,7 +135,7 @@
 
   line,
   .tick line {
-    stroke: #aaa;
+    stroke: var(--red-dark);
   }
 
   .gridline {

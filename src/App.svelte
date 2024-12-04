@@ -6,9 +6,11 @@
   import Bar from "./custom_charts/barCustom.svelte";
   import Column from "./custom_charts/columnCustom.svelte";
   import Scrolly from "./components/scrolly.svelte";
+  
 </script>
 
 <div class="page-column">
+  <h1>My gallery of chart templates</h1>
   <Scatterplot />
   </div>
   <Scrolly/>

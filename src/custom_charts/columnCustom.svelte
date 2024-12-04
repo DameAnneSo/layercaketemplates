@@ -37,6 +37,7 @@
   };
 </script>
 
+<h2>The column chart</h2>
 <div class="chart-container">
   <LayerCake {...config} debug={false}>
     <AxisX pinkCircle={false} tickMarks={false}/>

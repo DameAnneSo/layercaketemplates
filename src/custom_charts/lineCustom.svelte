@@ -50,6 +50,7 @@
   };
 </script>
 
+<h2>The line chart</h2>
 <div class="chart-container">
   <LayerCake {...config} debug={false}>
     <AxisX />

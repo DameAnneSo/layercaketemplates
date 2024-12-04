@@ -1,0 +1,35 @@
+ :root {/* Grayscale / Neutral Colors */
+ /* dark shades of primary color*/
+  --clr-primary-1: hsl(350, 25%, 14%);
+  --clr-primary-2: hsl(350, 25%, 27%);
+  --clr-primary-3: hsl(348, 25%, 41%);
+  --clr-primary-4: hsl(350, 30%, 55%);
+  /* primary/main color */
+  --clr-primary-5: #d98292;
+  /* lighter shades of primary color */
+  --clr-primary-6: hsl(350, 54%, 75%);
+  --clr-primary-7: hsl(348, 53%, 81%);
+  --clr-primary-8: #f0ccd2;
+  --clr-primary-9: hsl(349, 52%, 94%);
+  --clr-primary-10: #fff;
+  /* darkest grey - used for headings */
+  --clr-grey-1: hsl(222, 49%, 7%);
+  --clr-grey-2: hsl(218, 49%, 10%);
+  --clr-grey-3: hsl(222, 50%, 14%);
+  --clr-grey-4: hsl(220, 48%, 14%);
+  /* grey used for paragraphs */
+  --clr-grey-5: hsl(220, 49%, 17%);
+  --clr-grey-6: hsl(222, 49%, 7%);
+  --clr-grey-7: hsl(220, 19%, 34%);
+  --clr-grey-8: hsl(218, 10%, 50%);
+  --clr-grey-9: hsl(222, 10%, 67%);
+  --clr-grey-10: hsl(220, 11%, 83%);
+  --clr-grey-11: #eaebee;
+  --clr-white: #fff;
+
+  /* warning colours */
+  --red-light: #f8d7da;
+  --red-dark: #842029;
+  --green-light: #d1e7dd;
+  --green-dark: #0f5132;
+ }

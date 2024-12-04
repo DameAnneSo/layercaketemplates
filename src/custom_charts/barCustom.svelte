@@ -37,6 +37,7 @@ const custom = {
   };
 </script>
 
+<h2>The bar chart</h2>
 <div class="chart-container">
   <LayerCake {...config} debug={false}>
     <AxisX ticks={10} pinkCircle={false} />

@@ -2,6 +2,9 @@
 	// issue: cant seem to toggle the inverse class
 
 	import { onMount } from "svelte";
+	import { step } from "../stores/commonStores.js";
+	import ScrollyScatterplotCustom from "../custom_charts/scrollyScatterplotCustom.svelte";
+
 	let sections;
 
 	onMount(() => {
@@ -9,8 +12,8 @@
 
 		const options = {
 			root: null, // it is the viewport and it's the default value
-			threshold: 0, // 0.5 means when 50% of the element is visible. Scale is from 0 to 1. Default is 0. If we set it to 1, it means the element needs to be fully visible to trigger the callback but won't work if you use rootMargin with it.
-			rootMargin: "0px", // it's the margin around the root. Values are similar to css property. We can set multiple values like "10px 20px 30px 40px". Needs to be in px or %
+			threshold: 0, // 0.5 means when 50% of the element is visible. Scale is from 0 to 1. Default is 0. If we set it to 1, it means the element needs to be fully visible to trigger the callback; be careful how it interacts with rootmargin though.
+			rootMargin: "-15%",
 		};
 
 		const observer = new IntersectionObserver(function (entries, observer) {
@@ -19,15 +22,12 @@
 					return;
 				}
 
-				console.log(
-					"Element:",
-					entry.target.className,
-					"Is intersecting:",
-					entry.isIntersecting,
-					"Has inverse class:",
-					entry.target.classList.contains("inverse"),
-					observer.unobserve(entry.target) // if you don't want to observe the element anymore, means you don't want to trigger the callback anymore for instance when you scroll back to the top of the page
-				);
+				const arrayofEntries = [...entry.target.parentElement.children];
+
+				$step = arrayofEntries.indexOf(entry.target);
+				// console.log(
+				// 	"entry.target",
+				// );
 			});
 		}, options);
 
@@ -35,6 +35,22 @@
 			observer.observe(section);
 		});
 	});
+
+	let backgroundColor = "transparent";
+
+	const colourStep = () => {
+		if ($step === 0) {
+			backgroundColor = "transparent";
+		} else if ($step === 1) {
+			backgroundColor = "lightblue";
+		} else if ($step === 2) {
+			backgroundColor = "green";
+		} else {
+			backgroundColor = "red";
+		}
+	};
+
+	// $:$step,	colourStep();
 </script>
 
 <div class="scrolly">
@@ -64,14 +80,17 @@
 				Step 4: Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil
 				pariatur ullam impedit, error iste non, similique ad et porro vitae
 				suscipit facilis. Labore numquam omnis porro reprehenderit, velit, ullam
-				molestias corrupti fugit officia sed illo cupiditate rem veritatis dicta
-				reiciendis cum blanditiis praesentium recusandae officiis, consequatur
-				quibusdam. Qui, at dicta.
+				molestias corrupti fugit officia sed illo cupiditate
 			</p>
 		</div>
 		<div class="step_final"></div>
 	</div>
-	<div class="background"></div>
+	<div
+		class="background"
+		style:background-color={backgroundColor}
+	>
+<ScrollyScatterplotCustom/>
+</div>
 </div>
 
 <style>
@@ -133,7 +152,7 @@
 		z-index: 1;
 		top: 0;
 		position: -webkit-sticky;
-		background-color: lavender;
+		/* background-color: lavender; */
 		height: 99vh;
 		grid-row: 1/-1;
 		grid-column: 1/-1;

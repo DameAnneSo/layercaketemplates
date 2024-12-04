@@ -41,6 +41,7 @@
   // console.log(stackedBarConfig);
 </script>
 
+<h2>The stacked bar chart</h2>
 <div class="chart-container">
   <LayerCake {...config} debug={false}>
     <AxisX />
