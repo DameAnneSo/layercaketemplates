@@ -9,7 +9,7 @@ const barData = [
   { key: "owner 6", value: 3, category: "cat" },
 ];
 
-const colorFunction = () => "teal";
+const colorFunction = () => "var(--clr-primary-5)";
 const custom = {
   colorFunction,
 };

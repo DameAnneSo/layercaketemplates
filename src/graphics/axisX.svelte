@@ -128,12 +128,12 @@
 
   line,
   .tick line {
-    stroke: var(--red-dark);
+    stroke: var(--clr-primary-8);
     stroke-dasharray: 2;
   }
 
   .tick text {
-    fill: var(--red-dark);
+    fill: var(--clr-primary-3);
   }
 
   .tick .tick-mark,

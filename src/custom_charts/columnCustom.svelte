@@ -19,7 +19,7 @@
   // //// Custom functions
   const colorFunction = (d) => {
     // if first category then red, else blue
-    return d.category === newData[0].category ? "red" : "blue";
+    return d.category === newData[0].category ? "var(--clr-primary-3)" : "var(--clr-primary-8)";
   };
   // const colorFunction = () => "teal";
   const custom = {

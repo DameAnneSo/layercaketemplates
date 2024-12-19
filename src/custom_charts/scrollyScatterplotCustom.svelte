@@ -17,7 +17,7 @@
   //// Custom functions
   const colorFunction = (d) => {
     // if first category then red, else blue
-    return d.category === scatterplotConfig.data[0].category ? "red" : "blue";
+    return d.category === scatterplotConfig.data[0].category ? "var(--clr-primary-3)" : "var(--clr-grey-4)";
   };
 
   const custom = {

@@ -1,6 +1,4 @@
 <script>
-	// issue: cant seem to toggle the inverse class
-
 	import { onMount } from "svelte";
 	import { step } from "../stores/commonStores.js";
 	import ScrollyScatterplotCustom from "../custom_charts/scrollyScatterplotCustom.svelte";
@@ -58,29 +56,28 @@
 		<div class="step_intro"></div>
 		<div class="step1">
 			<p>
-				Step 1: Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore
-				nemo voluptate id ducimus pariatur ratione! A accusantium quibusdam
-				dolorem praesentium?
+				Step 1: Learning D3 is a massive steep learning curve. But it's worth it!
 			</p>
 		</div>
 		<div class="step2">
 			<p>
-				Step 2: Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-				Consectetur optio cumque minus esse in?
+				Step 2: First off, you need to learn the basics of SVG, HTML and CSS. My advice: don't skimp on advanced CSS, it's a game changer.
 			</p>
 		</div>
 		<div class="step3">
 			<p>
-				Step 3: Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-				Laudantium, voluptates!
+				Step 3: Then comes the real bummer: JavaScript. It's a beast of a language.
 			</p>
 		</div>
 		<div class="step4">
 			<p>
-				Step 4: Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil
-				pariatur ullam impedit, error iste non, similique ad et porro vitae
-				suscipit facilis. Labore numquam omnis porro reprehenderit, velit, ullam
-				molestias corrupti fugit officia sed illo cupiditate
+				Step 4: Ok, now you're ready to tackle D3. Good luck!
+			</p>
+		</div>
+
+				<div class="step5">
+			<p>
+				Step 5: But how about we simplify things with LayerCake? It's a Svelte library that makes D3 much easier	to use.
 			</p>
 		</div>
 		<div class="step_final"></div>
@@ -130,21 +127,16 @@
 	}
 
 	.step1 {
-		background-color: lightblue;
+		background-color: var(--clr-primary-8);
 	}
 	.step2 {
-		background-color: lightcoral;
+		background-color: var(--clr-primary-7);
 	}
 	.step3 {
-		background-color: lightgreen;
+		background-color: var(--clr-primary-8);
 	}
 	.step4 {
-		background-color: lightseagreen;
-	}
-
-	.inverse {
-		color: white;
-		background-color: black;
+		background-color: var(--clr-primary-9);
 	}
 
 	.background {

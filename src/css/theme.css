@@ -5,6 +5,14 @@
   --light-shadow: 0 5px 15px rgba(22, 36, 64, 0.1);
   --dark-shadow: 0 5px 15px rgba(22, 36, 64, 0.2);
   --max-width: 1170px;
+
+    /* others */
+  --transition: all 0.3s linear;
+  --spacing: 0.1rem;
+  --radius: 0.5rem;
+  --light-shadow: 0 5px 15px rgba(22, 36, 64, 0.1);
+  --dark-shadow: 0 5px 15px rgba(22, 36, 64, 0.2);
+  --max-width: 1170px;
   }
 
 /*

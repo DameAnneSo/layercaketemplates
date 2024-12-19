@@ -121,12 +121,8 @@
     font-size: 11px;
   }
 
-  .tick line {
-    stroke: var(--red-dark);
-  }
-
   .tick text {
-    fill: var(--red-dark);
+    fill: var(--clr-primary-3);
   }
 
   .tick.tick-0 line {
@@ -135,7 +131,7 @@
 
   line,
   .tick line {
-    stroke: var(--red-dark);
+    stroke: var(--clr-primary-8);
   }
 
   .gridline {
