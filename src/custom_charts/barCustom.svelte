@@ -5,6 +5,8 @@
   import AxisY from "../graphics/axisY.svelte";
   import Bar from "../graphics/bar.svelte";
   import Tooltip from "../graphics/tooltip.svelte";
+  import Labels from "../graphics/labels.svelte";
+  import Key from "../graphics/key.svelte";
   import { scaleBand } from "d3-scale";
 
   const newData = [
@@ -16,12 +18,12 @@
     { key: "owner 6", value: 3, category: "cat" },
   ];
   // //// Custom functions
-  // const colorFunction = (d) => {
-  //   // if first category then red, else blue
-  //   return d.category === barConfig.data[0].category ? "red" : "blue";
-  // };
+  const colorFunction = (d) => {
+    // if first category then red, else blue
+    return d.category === barConfig.data[0].category ? "var(--clr-primary-3)" : "var(--clr-primary-8)";
+  };
 
-  const colorFunction = () => "var(--clr-primary-3)";
+  // const colorFunction = () => "var(--clr-primary-3)";
   const custom = {
     colorFunction,
   };
@@ -29,6 +31,7 @@
   //// Configuration
   const config = {
     ...barConfig,
+    padding:{ top: 20, right:60, bottom: 20, left: 0 },
     yScale: scaleBand().padding(0.05),
     //// uncomment to switch  to newData
     data: newData,
@@ -46,7 +49,14 @@
     <AxisX ticks={10} pinkCircle={false} />
     <AxisY tickMarks={false} />
     <Bar />
+    <Labels
+      labels={newData}
+      getLabelName={(d) => d.key}
+      formatLabelName={(d) => d}
+    />
     <Tooltip />
+    <Key />
+
   </LayerCake>
 </div>
 

@@ -5,8 +5,9 @@
 
   import AxisX from "../graphics/axisX.svelte";
   import AxisY from "../graphics/axisY.svelte";
+  import Labels from "../graphics/labels.svelte";
   import Line from "../graphics/line.svelte";
-  import Scatterplot from "../graphics/scatterplot.svelte";
+
 
   const newData = [
     { key: 1, value: 13, category: "cat" },

@@ -1,4 +1,4 @@
-const padding = { top: 20, right: 0, bottom: 20, left: 0 };
+const padding = { top: 20, right:0, bottom: 20, left: 0 };
 
 const barData = [
   { key: "owner 1", value: 0.5, category: "cat" },
