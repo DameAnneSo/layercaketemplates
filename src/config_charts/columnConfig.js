@@ -19,7 +19,7 @@ export const columnConfig = {
   data: columnData,
   x: "key",
   y: "value",
-  yDomain: [0, null], // null needs to be fixed with a maxDomain to not overflow
+  yDomain: [0, null], // null because there is will be a  calculated value for the maxDomain not to overflow
   padding,
 };
 

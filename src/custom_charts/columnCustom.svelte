@@ -18,8 +18,10 @@
   ];
   // //// Custom functions
   const colorFunction = (d) => {
-    // if first category then red, else blue
-    return d.category === newData[0].category ? "var(--clr-primary-3)" : "var(--clr-primary-8)";
+    // if first category then clr1, else clr2
+    return d.category === newData[0].category
+      ? "var(--clr-primary-3)"
+      : "var(--clr-primary-8)";
   };
   // const colorFunction = () => "teal";
   const custom = {
@@ -40,16 +42,13 @@
 <h2>The column chart</h2>
 <div class="chart-container">
   <LayerCake {...config} debug={false}>
-    <AxisX pinkCircle={false} tickMarks={false}/>
+    <AxisX pinkCircle={false} tickMarks={false} />
     <AxisY ticks={10} />
     <Column />
   </LayerCake>
 </div>
 
 <style>
-  /*
-    The wrapper div needs to have an explicit width and height in CSS.
-  */
   .chart-container {
     height: 20rem;
     width: 100%;

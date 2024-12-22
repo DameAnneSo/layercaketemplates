@@ -35,6 +35,7 @@
   });
 
   let backgroundColor = "transparent";
+  // let backgroundColor = "var(--clr-primary-8)";
 
   // example of function that changes the background color based on the step (not used here)
   const colourStep = () => {
@@ -201,7 +202,7 @@
     opacity: 0;
     padding: 0;
   }
-
+/* 
   .step1 {
     background-color: var(--clr-primary-8);
   }
@@ -213,7 +214,7 @@
   }
   .step4 {
     background-color: var(--clr-primary-5);
-  }
+  } */
 
   .background {
     position: sticky;

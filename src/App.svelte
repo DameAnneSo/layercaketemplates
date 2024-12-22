@@ -6,9 +6,9 @@
   import Bar from "./custom_charts/barCustom.svelte";
   import Column from "./custom_charts/columnCustom.svelte";
   import Scrolly from "./components/scrolly.svelte";
-  import ImageD3 from "./images/d3.png";
-  import ImageSvelte from "./images/svelte.png";
-  import ImageLayerCake from "./images/layercake.png";
+  import ImageD3 from "./lib/d3.png";
+  import ImageSvelte from "./lib/svelte.png";
+  import ImageLayerCake from "./lib/layercake.png";
 
   import Footer from './components/footer.svelte'
 

@@ -8,5 +8,7 @@ export default defineConfig({
   plugins: [dsv(), svelte({})],
   server: {
     port: 5000
-  }
+  },
+  
 })
+

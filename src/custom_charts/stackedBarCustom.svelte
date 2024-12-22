@@ -16,14 +16,17 @@
   ];
 
   // replace stackedBarConfig.data with newStackedData
-  const MaxDomain =
-    stackedBarConfig.custom.calculateMaxDomain(stackedBarConfig.data);
+  const MaxDomain = stackedBarConfig.custom.calculateMaxDomain(
+    stackedBarConfig.data
+  );
 
   // Custom functions
   // replace stackedBarConfig.data with newStackedData
   const colorFunction = (d) => {
-    // if first category then red, else blue
-    return d.category === stackedBarConfig.data[0].category ? "var(--clr-primary-3)" : "var(--clr-primary-8)";
+    // if first category then clr1, else clr2
+    return d.category === stackedBarConfig.data[0].category
+      ? "var(--clr-primary-3)"
+      : "var(--clr-primary-8)";
   };
   const custom = {
     colorFunction,
@@ -31,7 +34,7 @@
 
   const config = {
     ...stackedBarConfig,
-     // specify newStackedData
+    // specify newStackedData
     data: newStackedData,
     xDomain: [0, MaxDomain],
     custom,
@@ -45,15 +48,12 @@
 <div class="chart-container">
   <LayerCake {...config} debug={false}>
     <AxisX />
-    <AxisY tickMarks={false}/>
+    <AxisY tickMarks={false} />
     <StackedBar />
   </LayerCake>
 </div>
 
 <style>
-  /*
-    The wrapper div needs to have an explicit width and height in CSS.
-  */
   .chart-container {
     height: 20rem;
     width: 100%;

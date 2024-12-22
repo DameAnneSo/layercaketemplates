@@ -1,14 +1,10 @@
 <script>
   import { getContext, createEventDispatcher } from "svelte";
   import { Svg } from "layercake";
-  // import { stack } from 'd3-shape'
-  // import { index } from 'd3-array'
-  import { scaleBand } from "d3-scale";
 
-  const { data, xGet, yGet, xScale, yScale, width, height, custom } =
-    getContext("LayerCake");
+  const { data, xGet, yGet, xScale, yScale, custom } = getContext("LayerCake");
 
-  const dispatch = createEventDispatcher();
+  export let labels = true;
 </script>
 
 <Svg>
@@ -25,4 +21,27 @@
       />
     {/each}
   </g>
+
+  {#if labels}
+    <g class="labels">
+      {#each $data as d, i}
+        <text
+          class="label"
+          x={$xGet(d) + 5}
+          y={$yGet(d) + $yScale.bandwidth() / 2}
+          alignment-baseline="middle"
+        >
+          {d.key}: {d.value}
+        </text>
+      {/each}
+    </g>
+  {/if}
 </Svg>
+
+<style>
+  .label {
+    fill: var(--clr-primary-5);
+    font-size: 0.8rem;
+    font-family: var(--ff-secondary);
+  }
+</style>

@@ -5,9 +5,7 @@
 
   import AxisX from "../graphics/axisX.svelte";
   import AxisY from "../graphics/axisY.svelte";
-  import Labels from "../graphics/labels.svelte";
   import Line from "../graphics/line.svelte";
-
 
   const newData = [
     { key: 1, value: 13, category: "cat" },
@@ -32,8 +30,10 @@
 
   //// Custom functions
   const colorFunction = (d) => {
-    // if first category then red, else blue
-    return d.category === lineConfig.data[0].category ? "var(--clr-primary-3)" : "var(--clr-primary-8)";
+    // if first category then clr1, else clr2
+    return d.category === lineConfig.data[0].category
+      ? "var(--clr-primary-3)"
+      : "var(--clr-primary-8)";
   };
 
   const custom = {
@@ -61,9 +61,6 @@
 </div>
 
 <style>
-  /*
-    The wrapper div needs to have an explicit width and height in CSS.
-  */
   .chart-container {
     height: 20rem;
     width: 100%;

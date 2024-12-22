@@ -22,7 +22,7 @@ export const stackedBarConfig = {
   data: stackedData,
   y: "key",
   x: "value",
-  xDomain: [0, null], // null needs to be fixed with a maxDomain to not overflow
+  xDomain: [0, null], // null because there is will be a  calculated value for the maxDomain not to overflow
   padding,
   custom,
   yScale: scaleBand().paddingInner(0.05),

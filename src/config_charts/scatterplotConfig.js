@@ -20,6 +20,7 @@ export const scatterplotConfig = {
   data: scatterplotData,
   x: "key",
   y: "value",
+  // null because there is will be a  calculated value for the maxDomain not to overflow
   xDomain: [0, null],
   yDomain: [0, null],
   padding,

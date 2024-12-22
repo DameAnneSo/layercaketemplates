@@ -16,14 +16,17 @@
   ];
 
   //// replace stackedColumnConfig.data with newStackedData
-  const MaxDomain =
-    stackedColumnConfig.custom.calculateMaxDomain(stackedColumnConfig.data);
+  const MaxDomain = stackedColumnConfig.custom.calculateMaxDomain(
+    stackedColumnConfig.data
+  );
 
-  //// (Optional) Custom functions 
+  //// (Optional) Custom functions
   //// replace stackedColumnConfig.data with newStackedData
   const colorFunction = (d) => {
-    //// if first category then red, else blue
-    return d.category === stackedColumnConfig.data[0].category ? "var(--clr-primary-3)" : "var(--clr-primary-8)";
+    //// if first category then colour1, else colour2
+    return d.category === stackedColumnConfig.data[0].category
+      ? "var(--clr-primary-3)"
+      : "var(--clr-primary-8)";
   };
   const custom = {
     colorFunction,
@@ -31,8 +34,8 @@
 
   const config = {
     ...stackedColumnConfig,
-     //// uncomment to switch to newStackedData
-    // data: newStackedData, 
+    //// uncomment to switch to newStackedData
+    // data: newStackedData,
     yDomain: [0, MaxDomain],
     custom,
   };
@@ -44,16 +47,13 @@
 <h2>The stacked column chart</h2>
 <div class="chart-container">
   <LayerCake {...config} debug={false}>
-    <AxisX tickMarks={false}//>
+    <AxisX tickMarks="{false}/" />
     <AxisY />
     <StackedColumn />
   </LayerCake>
 </div>
 
 <style>
-  /*
-    The wrapper div needs to have an explicit width and height in CSS.
-  */
   .chart-container {
     height: 20rem;
     width: 100%;

@@ -16,8 +16,10 @@
 
   //// Custom functions
   const colorFunction = (d) => {
-    // if first category then red, else blue
-    return d.category === scatterplotConfig.data[0].category ? "var(--clr-primary-3)" : "var(--clr-primary-5)";
+    // if first category then clr1, else clr2
+    return d.category === scatterplotConfig.data[0].category
+      ? "var(--clr-primary-3)"
+      : "var(--clr-primary-5)";
   };
 
   const custom = {
@@ -39,26 +41,11 @@
 <h2>The scatterplot</h2>
 <div class="chart-container">
   <LayerCake {...config} debug={false}>
-    <AxisX ticks={5} pinkCircle={true} gridlines={true}/>
-    <AxisY gridlines={true}/>
+    <AxisX ticks={5} pinkCircle={true} gridlines={true} />
+    <AxisY gridlines={true} />
     <Scatterplot />
   </LayerCake>
 </div>
-
-<!-- 
-TO DO LIST:
-Dont understand the intro of LayerCake props 
- https://layercake.graphics/guide#layercake-props
-
- Padding: doesn that mean we forget about margin top, bottom, left, right?
-
- Re-read the section about xPadding and xNice and position
-
-note for later: aspectRatio: c'est le truc dont j'ai besoin pour changer layout mobile/desktop!!!
-
-re-read ScaledSvg, 
-
--->
 
 <style>
   /*

@@ -16,8 +16,10 @@
 
   //// Custom functions
   const colorFunction = (d) => {
-    // if first category then red, else blue
-    return d.category === scatterplotConfig.data[0].category ? "var(--clr-primary-3)" : "var(--clr-grey-4)";
+    // if first category then clr1, else clr2
+    return d.category === scatterplotConfig.data[0].category
+      ? "var(--clr-primary-3)"
+      : "var(--clr-grey-4)";
   };
 
   const custom = {
@@ -37,23 +39,21 @@
 </script>
 
 <div class="page-column">
-<div class="chart-container">
-  <LayerCake {...config} debug={false}>
-    <AxisX ticks={5} pinkCircle={true} gridlines={true}/>
-    <AxisY gridlines={true}/>
-    <ScrollyScatterplot />
-  </LayerCake>
+  <div class="chart-container">
+    <LayerCake {...config} debug={false}>
+      <AxisX ticks={5} pinkCircle={true} gridlines={true} />
+      <AxisY gridlines={true} />
+      <ScrollyScatterplot />
+    </LayerCake>
+  </div>
 </div>
-</div>
-
 
 <style>
-
   .page-column {
-  /* background-color:grey;  */
-  height:100%;
-  display:grid; 
-  place-items:center;
+    /* background-color:grey;  */
+    height: 100%;
+    display: grid;
+    place-items: center;
   }
 
   .chart-container {

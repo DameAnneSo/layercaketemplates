@@ -2,7 +2,7 @@
 	import { getContext } from "svelte";
 	import { Svg } from "layercake";
 	import { step } from "../stores/commonStores.js";
-	const { data, xGet, yGet, width, height, custom } = getContext("LayerCake");
+	const { data, xGet, yGet, custom } = getContext("LayerCake");
 
 </script>
 

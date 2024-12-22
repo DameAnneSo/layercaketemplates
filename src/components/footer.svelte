@@ -1,20 +1,18 @@
 <script>
-  export let backgroundColor;
   // set year
   const date = new Date().getFullYear();
+  import Logo from '../lib/mylogo.png';
 </script>
 
 <footer class="footer">
- 
-    <a href="https://curiousdata.netlify.app/">
-      <img src="./src/images/logo.svg" alt="logo" class="nav-logo" />
-      <br />
-      Go to the author's website
-    </a>
-   <p>
-      &copy; <span id="date">{date}</span> Anne-Sophie Pereira De Sá. All rights
-      reserved
-    </p>
+  <a href="https://curiousdata.netlify.app/">
+    <img src={Logo} alt="logo" class="nav-logo" />
+    <br />
+    Go to the author's website
+  </a>
+  <p>
+    &copy; <span id="date">{date}</span> Anne-Sophie Pereira De Sá. All rights reserved
+  </p>
 </footer>
 
 <style>

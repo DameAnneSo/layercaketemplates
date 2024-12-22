@@ -4,9 +4,6 @@
   import AxisX from "../graphics/axisX.svelte";
   import AxisY from "../graphics/axisY.svelte";
   import Bar from "../graphics/bar.svelte";
-  import Tooltip from "../graphics/tooltip.svelte";
-  import Labels from "../graphics/labels.svelte";
-  import Key from "../graphics/key.svelte";
   import { scaleBand } from "d3-scale";
 
   const newData = [
@@ -19,8 +16,10 @@
   ];
   // //// Custom functions
   const colorFunction = (d) => {
-    // if first category then red, else blue
-    return d.category === barConfig.data[0].category ? "var(--clr-primary-3)" : "var(--clr-primary-8)";
+    // if first category then clr1, else clr2
+    return d.category === barConfig.data[0].category
+      ? "var(--clr-primary-3)"
+      : "var(--clr-primary-8)";
   };
 
   // const colorFunction = () => "var(--clr-primary-3)";
@@ -31,7 +30,7 @@
   //// Configuration
   const config = {
     ...barConfig,
-    padding:{ top: 20, right:60, bottom: 20, left: 0 },
+    padding: { top: 20, right: 60, bottom: 20, left: 0 },
     yScale: scaleBand().padding(0.05),
     //// uncomment to switch  to newData
     data: newData,
@@ -49,41 +48,12 @@
     <AxisX ticks={10} pinkCircle={false} />
     <AxisY tickMarks={false} />
     <Bar />
-    <Labels
-      labels={newData}
-      getLabelName={(d) => d.key}
-      formatLabelName={(d) => d}
-    />
-    <Tooltip />
-    <Key />
-
   </LayerCake>
 </div>
 
 <style>
-  /*
-    The wrapper div needs to have an explicit width and height in CSS.
-  */
   .chart-container {
     height: 20rem;
     width: 100%;
   }
-
-  /*
-      <Html pointerEvents={false}>
-      {#if hideTooltip !== true}
-        <Tooltip {evt} let:detail>
-          <!-- For the tooltip, do another data join because the hover event only has the data from the geography data -->
-          {@const tooltipData = { ...detail.props, ...data.get(detail.props[mapJoinKey]) }}
-          {#each Object.entries(tooltipData) as [key, value]}
-            {@const keyCapitalized = key.replace(/^\w/, d => d.toUpperCase())}
-            <div class="row">
-              <span>{keyCapitalized}:</span>
-              {typeof value === 'number' ? addCommas(value) : value}
-            </div>
-          {/each}
-        </Tooltip>
-      {/if}
-    </Html>
- */
 </style>
