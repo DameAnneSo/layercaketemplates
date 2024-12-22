@@ -1,7 +1,7 @@
 <script>
   import { LayerCake } from "layercake";
   import { scatterplotConfig } from "../config_charts/scatterplotConfig.js";
-  import ScrollyScatterplot from "../graphics/scrolly_Scatterplot.svelte";
+  import ScrollyScatterplot from "../graphics/scrollyScatterplot.svelte";
   import AxisX from "../graphics/axisX.svelte";
   import AxisY from "../graphics/axisY.svelte";
 
