@@ -10,6 +10,8 @@
   import ImageSvelte from "./images/svelte.png";
   import ImageLayerCake from "./images/layercake.png";
 
+  import Footer from './components/footer.svelte'
+
   // set year
   const date = new Date().getFullYear();
 </script>
@@ -39,41 +41,7 @@
   <StackedColumn />
 </div>
 
-<!-- footer -->
-<footer class="footer">
-  <ul class="social-icons">
-    <li>
-      <a
-        href="https://www.linkedin.com/in/annesophiepereira/"
-        target="_blank"
-        class="social-icon"
-      >
-        <i class="fab fa-linkedin" />
-      </a>
-    </li>
-    <li>
-      <a
-        href="https://github.com/DameAnneSo"
-        target="_blank"
-        class="social-icon"
-      >
-        <i class="fa-brands fa-github"></i>
-      </a>
-    </li>
-    <li>
-      <a
-        href="https://bsky.app/profile/curiousdata.bsky.social"
-        target="_blank"
-        class="social-icon"
-      >
-        <i class="fa-brands fa-bluesky"></i>
-      </a>
-    </li>
-  </ul>
-  <p>
-    &copy; <span id="date">{date}</span> Anne-Sophie Pereira De Sá. All rights reserved
-  </p>
-</footer>
+<Footer />
 
 <style>
   .hero-center {
@@ -98,43 +66,5 @@
     gap: 2rem;
   }
 
-  .footer {
-    margin-top: 2rem;
-    height: 12rem;
-    padding-bottom: 1rem;
-    background-color: var(--clr-primary-1);
-    display: grid;
-    place-items: center;
-  }
 
-  .footer .social-icons {
-    margin-bottom: 2rem;
-  }
-
-  .footer .social-icon {
-    color: var(--clr-primary-5);
-  }
-
-  .footer .social-icon:hover {
-    color: var(--clr-primary-7);
-  }
-
-  .footer p {
-    font-size: 1rem;
-    text-transform: capitalize;
-    color: var(--clr-primary-4);
-  }
-
-  .social-icons {
-    display: grid;
-    margin-top: 3rem;
-    width: 20rem;
-    grid-template-columns: repeat(3, 1fr);
-    justify-items: center;
-  }
-
-  .social-icon {
-    font-size: 2rem;
-    transition: --var(transition);
-  }
 </style>

@@ -14,8 +14,8 @@
 				cx={$xGet(d)}
 				cy={$yGet(d)}
 				fill={$custom.colorFunction(d)}
-				fill-opacity={i+1 === $step ? 1 : 0.2}
-				r={i+1 === $step ? 10 : 5}
+				fill-opacity={$step === 0 ? 0.2 : (i+1 === $step ? 1 : 0.2)}
+				r={$step === 0 ? 5 : (i+1 === $step ? 10 : 5)}
 			></circle>
 		{/each}
 	</g>
