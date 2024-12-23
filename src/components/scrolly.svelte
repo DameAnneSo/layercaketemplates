@@ -1,7 +1,8 @@
 <script>
   import { onMount } from "svelte";
   import { step } from "../stores/commonStores.js";
-  import ScrollyScatterplotCustom from "../custom_charts/scrollyScatterplotCustom.svelte";
+  import ScrollyScatterplot from "../custom_charts/scrollyScatterplotCustom.svelte";
+  import ScrollyBar from "../custom_charts/scrollyBarCustom.svelte";
 
   let sections;
 
@@ -163,7 +164,8 @@
     <div class="step_final"></div>
   </div>
   <div class="background" style:background-color={backgroundColor}>
-    <ScrollyScatterplotCustom />
+    <!-- <ScrollyScatterplot /> -->
+    <ScrollyBar />
   </div>
 </div>
 
