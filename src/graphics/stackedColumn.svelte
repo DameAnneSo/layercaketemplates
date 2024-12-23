@@ -22,7 +22,7 @@
     stackedData = stackGenerator(indexedData);
     // console.log(stackedData)
   };
-  export let labels = false;
+  export let labels = true;
 
   $: $width, $height, $data, renderBars();
 </script>
@@ -39,22 +39,22 @@
         fill={$custom.colorFunction({ category: categoryData.key })}
       />
     {/each}
-  {/each}
 
-  {#if labels}
-    <g class="labels">
-      {#each $data as d, i}
-        <text
-          class="label"
-          x={$xScale(d.category) + $xScale.bandwidth() / 2}
-          y={$yScale(d.value) - 5}
-          text-anchor="middle"
-        >
-          {d.key}: {d.value}
-        </text>
-      {/each}
-    </g>
-  {/if}
+    {#if labels}
+      <g class="labels">
+        {#each categoryData as categoryDatum}
+          <text
+            class="label"
+            x={$xScale(categoryDatum.data[0]) + $xScale.bandwidth() / 2}
+            y={$yScale(categoryDatum[1]) + ($yScale(categoryDatum[0]) - $yScale(categoryDatum[1])) / 2}
+            text-anchor="middle"
+          >
+            {categoryData.key}: {categoryDatum[1] - categoryDatum[0]}
+          </text>
+        {/each}
+      </g>
+    {/if}
+  {/each}
 </Svg>
 
 <style>
@@ -64,3 +64,5 @@
     font-family: var(--ff-secondary);
   }
 </style>
+
+

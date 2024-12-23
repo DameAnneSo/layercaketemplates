@@ -41,7 +41,7 @@
 <div class="page-column">
   <div class="chart-container">
     <LayerCake {...config} debug={false}>
-      <AxisX ticks={5} pinkCircle={true} gridlines={true} />
+      <AxisX ticks={5} gridlines={true} />
       <AxisY gridlines={true} />
       <ScrollyScatterplot />
     </LayerCake>
@@ -50,15 +50,14 @@
 
 <style>
   .page-column {
-    /* background-color:grey;  */
     height: 100%;
     display: grid;
-    place-items: center;
+    place-items: center; 
   }
 
   .chart-container {
     height: 20rem;
     width: 100%;
-    padding: 0rem 1rem;
   }
+
 </style>

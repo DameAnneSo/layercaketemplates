@@ -57,7 +57,7 @@
   <div class="foreground">
     <div class="step_intro"></div>
     <div class="step1">
-      <h3>Step 1: Learning D3 is a steep learning curve. But it's worth it!</h3>
+      <h2>Step 1: Learning D3 is a steep learning curve. But it's worth it!</h2>
       <p>
         Embarking on the journey to learn front-end web development and data
         visualisation can be both exciting and rewarding. This website is a
@@ -66,7 +66,7 @@
       </p>
     </div>
     <div class="step2">
-      <h3>Step 2: HTML & CSS</h3>
+      <h2>Step 2: HTML & CSS</h2>
       <p>
         HTML is the standard language for creating web pages. It provides the
         structure of a webpage. CSS is used to style and layout web pages,
@@ -78,7 +78,7 @@
       </p>
     </div>
     <div class="step3">
-      <h3>Step 3: SVG</h3>
+      <h2>Step 3: SVG</h2>
       <p>
        An XML-based format for vector graphics. It is used to
         create scalable images that can be resized without losing quality. SVG
@@ -89,7 +89,7 @@
       </p>
     </div>
     <div class="step4">
-      <h3>Step 4: JavaScript</h3>
+      <h2>Step 4: JavaScript</h2>
       <p>
         JavaScript is a programming language that allows you to create dynamic
         and interactive web content. It is used to add functionality to web
@@ -105,7 +105,7 @@
     </div>
 
     <div class="step5">
-      <h3>Step 5: D3.js</h3>
+      <h2>Step 5: D3.js</h2>
       <p>
        A JavaScript library for creating
         dynamic, interactive data visualisations in web browsers. <br />
@@ -121,7 +121,7 @@
     </div>
 
     <div class="step6">
-      <h3>Step 6: Svelte</h3>
+      <h2>Step 6: Svelte</h2>
       <p>
         A modern JavaScript framework for building user interfaces.
         You can read more technical explanations online, but the long story
@@ -136,7 +136,7 @@
     </div>
 
     <div class="step7">
-      <h3>Step 7: LayerCake.js</h3>
+      <h2>Step 7: LayerCake.js</h2>
       <p>
         A library for building data visualisations with Svelte.
         It provides a set of tools that simplifies layering different
@@ -151,7 +151,7 @@
     </div>
 
     <div class="step8">
-      <h3>Step 8: Scrollytelling Techniques</h3>
+      <h2>Step 8: Scrollytelling Techniques</h2>
       <p>
         Scrollytelling is that cool technique that combines scrolling with
         storytelling to create engaging and interactive narratives. It is often
@@ -185,7 +185,7 @@
     margin: 75vh auto 0 auto;
     padding: 2rem;
     box-shadow: 0 1px 10px 0px rgba(0, 0, 0, 0.8);
-    /* background-color: beige; */
+    background-color: var(--clr-primary-8);
   }
 
   /* step_final */
@@ -202,28 +202,20 @@
     opacity: 0;
     padding: 0;
   }
-/* 
-  .step1 {
-    background-color: var(--clr-primary-8);
-  }
-  .step2 {
-    background-color: var(--clr-primary-7);
-  }
-  .step3 {
-    background-color: var(--clr-primary-6);
-  }
-  .step4 {
-    background-color: var(--clr-primary-5);
-  } */
 
   .background {
     position: sticky;
     z-index: 1;
     top: 0;
     position: -webkit-sticky;
-    /* background-color: lavender; */
     height: 99vh;
     grid-row: 1/-1;
     grid-column: 1/-1;
+    width:100%;
+
+  }
+
+  h2 {
+  color: var(--clr-primary-2);
   }
 </style>

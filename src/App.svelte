@@ -10,7 +10,7 @@
   import ImageSvelte from "./lib/svelte.png";
   import ImageLayerCake from "./lib/layercake.png";
 
-  import Footer from './components/footer.svelte'
+  import Footer from "./components/footer.svelte";
 
   // set year
   const date = new Date().getFullYear();
@@ -33,10 +33,10 @@
 <Scrolly />
 <div class="page-column">
   <h1>My gallery of chart templates</h1>
+  <Scatterplot />
   <Line />
   <Bar />
   <Column />
-  <Scatterplot />
   <StackedBar />
   <StackedColumn />
 </div>
@@ -65,6 +65,4 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
   }
-
-
 </style>

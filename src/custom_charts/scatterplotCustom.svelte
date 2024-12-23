@@ -41,7 +41,7 @@
 <h2>The scatterplot</h2>
 <div class="chart-container">
   <LayerCake {...config} debug={false}>
-    <AxisX ticks={5} pinkCircle={true} gridlines={true} />
+    <AxisX ticks={5} gridlines={true} />
     <AxisY gridlines={true} />
     <Scatterplot />
   </LayerCake>
