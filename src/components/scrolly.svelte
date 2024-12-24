@@ -183,7 +183,7 @@
   }
 
   .foreground > div {
-    width: 60ch;
+    max-width: 60ch;
     margin: 75vh auto 0 auto;
     padding: 2rem;
     box-shadow: 0 1px 10px 0px rgba(0, 0, 0, 0.8);
@@ -213,7 +213,7 @@
     height: 99vh;
     grid-row: 1/-1;
     grid-column: 1/-1;
-    width:100%;
+
 
   }
 

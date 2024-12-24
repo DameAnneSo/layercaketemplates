@@ -1,9 +1,9 @@
-﻿index,key,value,special
-1,HTML,1,no
-2,CSS,3,yes
-3,SVG ,2,no
-4,Javascript,8,no
-5,D3.js,10,no
-6,Svelte,7,no
-7,LayerCake ,7,no
-8,Scrollytelling,6,no
+﻿placeholder,index,key,value,special
+1,1,HTML,1,no
+2,2,CSS,3,yes
+3,3,SVG ,2,no
+4,4,Javascript,8,no
+5,5,D3.js,10,no
+6,6,Svelte,7,no
+7,7,LayerCake ,7,no
+8,8,Scrollytelling,6,no

@@ -38,26 +38,29 @@
   // console.log(scatterplotConfig);
 </script>
 
-<div class="page-column">
+<div class="scrolly-column">
   <div class="chart-container">
     <LayerCake {...config} debug={false}>
       <AxisX ticks={5} gridlines={true} />
       <AxisY gridlines={true} />
-      <ScrollyScatterplot />
+      <ScrollyScatterplot labels={false} />
     </LayerCake>
   </div>
 </div>
 
 <style>
-  .page-column {
+  .scrolly-column {
+    margin: 0 auto;
+    width: 60%; /* takes room of 60 characters */
+    /* height: 100%; */
+    max-width: 1200px; /* Limit maximum width for very large screens */
     height: 100%;
     display: grid;
-    place-items: center; 
+    place-items: center;
   }
 
   .chart-container {
     height: 20rem;
     width: 100%;
   }
-
 </style>

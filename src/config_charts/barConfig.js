@@ -19,5 +19,6 @@ export const barConfig = {
   x: "value",
   y: "key",
   xDomain: [0, null], // null because there is will be a  calculated value for the maxDomain not to overflow
+  yDomain: barData.map(d => d.key), // This preserves original order
   padding,
 };

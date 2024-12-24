@@ -5,7 +5,6 @@
   import Line from "./custom_charts/lineCustom.svelte";
   import Bar from "./custom_charts/barCustom.svelte";
   import Column from "./custom_charts/columnCustom.svelte";
-  import ScrollyColumn from "./custom_charts/scrollyBarCustom.svelte";
   import Scrolly from "./components/scrolly.svelte";
   import ImageD3 from "./lib/d3.png";
   import ImageSvelte from "./lib/svelte.png";
@@ -40,7 +39,6 @@
   <Column />
   <StackedBar />
   <StackedColumn />
-  <ScrollyColumn />
 </div>
 
 <Footer />

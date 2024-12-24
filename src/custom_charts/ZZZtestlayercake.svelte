@@ -12,3 +12,5 @@ note for later: aspectRatio: c'est le truc dont j'ai besoin pour changer layout 
 re-read ScaledSvg, 
 
 -->
+
+<!-- ADD LABEL RULES https://www.pewresearch.org/short-reads/2024/12/06/striking-findings-from-2024/sr_24-12-06_striking-findings_13/ -->

@@ -38,8 +38,6 @@
     custom,
   };
 
-  let evt;
-  let hideTooltip = true;
 </script>
 
 <h2>The bar chart</h2>

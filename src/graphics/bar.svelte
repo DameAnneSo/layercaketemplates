@@ -1,10 +1,11 @@
 <script>
-  import { getContext, createEventDispatcher } from "svelte";
+  import { getContext} from "svelte";
   import { Svg } from "layercake";
 
   const { data, xGet, yGet, xScale, yScale, custom } = getContext("LayerCake");
 
   export let labels = true;
+
 </script>
 
 <Svg>
