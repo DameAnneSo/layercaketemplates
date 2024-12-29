@@ -1,17 +1,28 @@
 <script>
-  import { getContext} from "svelte";
+  import { getContext } from "svelte";
   import { Svg } from "layercake";
-
+  import { step } from "../stores/commonStores.js";
   const { data, xGet, yGet, xScale, yScale, custom } = getContext("LayerCake");
 
-  export let labels = true;
+  function getFillColor(index, $step) {
+    if ($step === 1) {
+      return "var(--clr-primary-3)";
+    } else if (($step === 2 && index === 1) || ($step === 2 && index === 0)) {
+      return "var(--clr-primary-3)";
+    } else if ($step === index + 1) {
+      return "var(--clr-primary-3)";
+    } else {
+      return "var(--clr-primary-8)";
+    }
+  }
 
+  export let labels = true;
 </script>
 
 <Svg>
   <!-- Add :sort to disable automatic sorting -->
-  <g class="bar-group" {...$$props}>
-    {#each $data.slice().sort((a, b) => $data.indexOf(a) - $data.indexOf(b)) as d, i}
+  <g class="bar-group">
+    {#each $data as d, i}
       <rect
         class="group-rect"
         data-id={i}
@@ -19,21 +30,22 @@
         y={$yGet(d)}
         height={$yScale.bandwidth()}
         width={$xGet(d)}
-        fill={$custom.colorFunction(d)}
-      />
+        fill={getFillColor(i, $step)}
+      ></rect>
     {/each}
   </g>
 
   {#if labels}
     <g class="labels">
-      {#each $data.slice().sort((a, b) => $data.indexOf(a) - $data.indexOf(b)) as d, i}
+      {#each $data as d, i}
         <text
           class="label"
-          x={$xGet(d) + 5}
+          x={$xGet(d) - 5}
           y={$yGet(d) + $yScale.bandwidth() / 2}
           alignment-baseline="middle"
+          text-anchor="end"
         >
-          {d.key}: {d.value}
+          {d.value}/10
         </text>
       {/each}
     </g>
@@ -45,5 +57,9 @@
     fill: var(--clr-primary-5);
     font-size: 0.8rem;
     font-family: var(--ff-secondary);
+  }
+
+  rect {
+    transition: fill 1s ease-in;
   }
 </style>

@@ -20,7 +20,7 @@
     value: +d.value,
     category: d.special,
   }));
-  console.log(newData);
+  // console.log(newData);
 
   // Draw the chart
   let hasDrawn = false;
@@ -46,7 +46,7 @@
   //// Configuration
   const config = {
     ...barConfig,
-    yDomain: newData.map(d => d.key), // This preserves original order, with the new data in mind
+    yDomain: newData.map((d) => d.key), // This preserves original order, with the new data in mind
     padding: { top: 20, right: 0, bottom: 20, left: 30 },
     yScale: scaleBand().padding(0.05),
     //// uncomment to switch  to newData
@@ -58,10 +58,12 @@
 
 <div class="scrolly-column">
   <div class="chart-container">
+    <h3>Dataviz Stack Components & Learning Curve</h3>
+    <small>Levels of difficulty from a beginner's perspective</small>
     <LayerCake {...config} debug={false}>
       <AxisX ticks={10} gridlines={true} />
       <AxisY tickMarks={false} />
-      <ScrollyBar labels={false}/>
+      <ScrollyBar labels={true} />
     </LayerCake>
   </div>
 </div>
@@ -78,5 +80,13 @@
   .chart-container {
     height: 20rem;
     width: 100%;
+  }
+
+  h3 {
+    margin-bottom: 0rem;
+  }
+
+  small {
+    color: var(--clr-grey-8);
   }
 </style>

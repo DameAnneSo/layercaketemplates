@@ -64,5 +64,6 @@
   .chart-container {
     height: 20rem;
     width: 100%;
+    margin-bottom: 5rem;
   }
 </style>

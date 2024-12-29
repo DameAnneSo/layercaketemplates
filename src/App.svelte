@@ -11,6 +11,7 @@
   import ImageLayerCake from "./lib/layercake.png";
 
   import Footer from "./components/footer.svelte";
+  import Thanks from "./components/thanks.svelte";
 
   // set year
   const date = new Date().getFullYear();
@@ -28,6 +29,7 @@
       <img src={ImageSvelte} alt="svelte logo" />
       <img src={ImageLayerCake} alt="layercake logo" />
     </div>
+    <h4>keep scrolling 👇</h4>
   </div>
 </div>
 <Scrolly />
@@ -40,10 +42,12 @@
   <StackedBar />
   <StackedColumn />
 </div>
-
+<Thanks />
 <Footer />
 
+
 <style>
+  
   .hero-center {
     min-height: 100vh;
     display: grid;
@@ -65,4 +69,32 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
   }
+
+  h4 {
+    text-transform: uppercase;
+    margin-top: 3rem;
+  }
+
+  h4 {
+    text-transform: uppercase;
+    margin-top: 3rem;
+    animation: bounce 2s infinite;
+  }
+
+  @keyframes bounce {
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+      transform: translateY(0);
+    }
+    40% {
+      transform: translateY(-10px);
+    }
+    60% {
+      transform: translateY(-5px);
+    }
+  }
+
 </style>

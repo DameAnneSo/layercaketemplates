@@ -23,7 +23,7 @@
     display: grid;
     place-items: center;
     height: 12rem;
-    margin-top: 2rem;
+    /* margin-top: 2rem; */
     margin-bottom: 1rem;
     padding-top: 1rem;
     background-color: var(--clr-primary-2);

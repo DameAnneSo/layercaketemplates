@@ -3,7 +3,6 @@
   import { step } from "../stores/commonStores.js";
   import ScrollyScatterplot from "../custom_charts/scrollyScatterplotCustom.svelte";
   import ScrollyBar from "../custom_charts/scrollyBarCustom.svelte";
-
   let sections;
 
   onMount(() => {
@@ -57,107 +56,134 @@
 <div class="scrolly">
   <div class="foreground">
     <div class="step_intro"></div>
-    <div class="step1">
-      <h2>Step 1: Learning D3 is a steep learning curve. But it's worth it!</h2>
+    <div class="step_subtitle">
+      <h2>Learning D3 is a steep learning curve. But it's worth it!</h2>
       <p>
         Embarking on the journey to learn front-end web development and data
-        visualisation can be both exciting and rewarding. This website is a
-        final project designed to explain the essential steps I have been
-        through in 2024.
+        visualisation can be both exciting and rewarding. <br />
+        This website is a project designed to showcase the learning steps I have
+        been through in 2024.
       </p>
     </div>
-    <div class="step2">
-      <h2>Step 2: HTML & CSS</h2>
+    <div class="step1">
+      <h2>#1: HTML & CSS</h2>
       <p>
         HTML is the standard language for creating web pages. It provides the
         structure of a webpage. CSS is used to style and layout web pages,
         including the design, colours, and fonts. <br />
-        Level of difficulty: Easy. HTML and CSS are beginner-friendly and are the
-        foundation of web development. They are essential for anyone starting in
-        web development.<br />
-        My advice: don't skimp on advanced CSS, it's a game changer.
+        <strong>Level of difficulty: easy</strong> HTML and CSS are
+        beginner-friendly.<br />
+        <strong>My advice:</strong> Don't skimp on advanced CSS, it's a game
+        changer. If you have time, practise by building your portfolio website,
+        <a href="https://curiousdata.netlify.app/" target="_blank">
+          like I did.</a
+        >
+      </p>
+      <!-- Correct -->
+    </div>
+
+    <div class="step2">
+      <h2>#2: SVG</h2>
+      <p>
+        An XML-based format for vector graphics. It is used to create scalable
+        images that can be resized without losing quality.
+        <strong>Level of difficulty: easy</strong> Understanding the basics of
+        SVG is straightforward.
+        <strong>My advice</strong>Even if that's for later down the line, option
+        to reading Data Sketches or
+        <a href="https://www.visualcinnamon.com/blog/" target="_blank">
+          Nadieh Bremer's blog</a
+        > for inspiration on how to use SVG in creative ways.
       </p>
     </div>
     <div class="step3">
-      <h2>Step 3: SVG</h2>
-      <p>
-       An XML-based format for vector graphics. It is used to
-        create scalable images that can be resized without losing quality. SVG
-        is often used for icons, logos, and complex graphics on the web.
-        <br />
-        Level of difficulty: Easy. Understanding the basics of SVG is straightforward,
-        but creating complex graphics can be more challenging.
-      </p>
-    </div>
-    <div class="step4">
-      <h2>Step 4: JavaScript</h2>
+      <h2>#3: JavaScript</h2>
       <p>
         JavaScript is a programming language that allows you to create dynamic
         and interactive web content. It is used to add functionality to web
         pages, such as form validation, interactive maps, and animations. <br />
-        Level of difficulty: Difficult (for me, at least). JavaScript has a steeper
-        learning curve compared to HTML and CSS, but it is essential for creating
-        interactive web applications.
-        <br />
-        My advice: build a solid foundation but stick to the basics when you learn
-        for the first time. You can always learn more advanced concepts later but
-        you want to start dabbling in dataviz as soon as possible.
+        <strong>Level of difficulty: Difficult (at least for me)</strong>
+        JavaScript has a steeper learning curve, compared to HTML and CSS, but you
+        won't be able to skip the fundamentals.
+        <strong>My advice</strong>
+        Stick to the basics when you learn for the first time. I have lost myself
+        into a great 40+ hour (great) course, but my goal is not to become a front
+        web dev. You want to start dabbling in dataviz as soon as possible.
+      </p>
+    </div>
+
+    <div class="step4">
+      <h2>#4: D3.js</h2>
+      <p>
+        A JavaScript library for creating dynamic, interactive data
+        visualisations in web browsers. <br />
+        <strong
+          >Level of difficulty: borderline discouraging (at least for me)</strong
+        >
+        Challenging for beginners, but don't despair, Svelte and LayerCake.js will
+        help later on.
+        <strong> My advice</strong>While you are learning the previous
+        languages, experiment with the chart libraries built on top of D3.js,
+        such as
+        <a href="https://www.rawgraphs.io/" target="_blank"> RawGraphs</a>
+        or <a href="https://flourish.studio/" target="_blank"> Flourish</a> or
+        <a href="https://observablehq.com/" target="_blank">
+          Observable notebooks</a
+        >. This will give you a good illustration of the blocs you will start
+        with.
       </p>
     </div>
 
     <div class="step5">
-      <h2>Step 5: D3.js</h2>
+      <h2>#5: Svelte</h2>
       <p>
-       A JavaScript library for creating
-        dynamic, interactive data visualisations in web browsers. <br />
-        Level of difficulty: Difficult. D3.js requires a good understanding of JavaScript
-        and data manipulation. It can be challenging for beginners but is very powerful
-        for creating complex visualisations.
-        <br />
-        My advice: while you are learning the previous languages, experiment with
-        the chart libraries built on top of D3.js, such as RawGraphs or Flourish
-        or even Observable. This will give you a good understanding of the basics
-        of data visualisation.
+        A modern JavaScript framework for building user interfaces. You can
+        start by watching videos by <a
+          href="https://www.youtube.com/watch?v=-THp2YVYEFc&list=PL8lFmBcH3vX9s8AmGfgvDBKaWzRRcib9T&ab_channel=newline"
+          target="_blank"
+        >
+          Connor Rothchild or Matthias Stahl</a
+        >, but the long story short for me: it makes Javascript and D3 a hell
+        lot more palatable.
+        <strong>Level of difficulty: moderate</strong> Svelte is easier to learn
+        compared to some other frameworks.
+        <strong> My advice</strong> The hardest part for me was not to despair with
+        Javascript and D3, and keep going until I got to the Svelte part. But Svelte
+        simplified a lot of things for me. So keep going!
       </p>
     </div>
 
     <div class="step6">
-      <h2>Step 6: Svelte</h2>
+      <h2>#6: LayerCake.js</h2>
       <p>
-        A modern JavaScript framework for building user interfaces.
-        You can read more technical explanations online, but the long story
-        short for me: it makes Javascript a hell lot more palatable <br />
-        Level of difficulty: Moderate. Svelte is easier to learn compared to some
-        other frameworks, but it still requires a solid understanding of JavaScript.
+        A library for building data visualisations with Svelte. It provides a
+        set of tools that simplifies layering different components.
         <br />
-        My advice: the hardest part for me was not to despair with Javascript and
-        D3, and keep going until I got to the Svelte part. But Svelte simplified
-        a lot of things for me. So keep going!
+        <strong>Level of difficulty: moderate</strong>Using LayerCake.js
+        requires knowledge of both Svelte and data visualisation principles.
+        <br />
+        <strong>My advice</strong> Very few tutorials on LayerCake.js unfortunately.
+        Perhaps worth learning once you get frustrated by having to constantly write
+        the same boring parts of D3.js and Svelte.
       </p>
     </div>
 
     <div class="step7">
-      <h2>Step 7: LayerCake.js</h2>
-      <p>
-        A library for building data visualisations with Svelte.
-        It provides a set of tools that simplifies layering different
-        components.
-        <br />
-        Level of difficulty: Moderate. Using LayerCake.js requires knowledge of both
-        Svelte and data visualisation principles. <br />
-        My advice: very few online tutorials on LayerCake.js unfortunately. Perhaps
-        worth learning once you get frustrated by the fact of having to constantly
-        write some of the boring parts of D3.js and Svelte.
-      </p>
-    </div>
-
-    <div class="step8">
-      <h2>Step 8: Scrollytelling Techniques</h2>
+      <h2>#7: Scrollytelling Techniques</h2>
       <p>
         Scrollytelling is that cool technique that combines scrolling with
         storytelling to create engaging and interactive narratives. It is often
-        used in data journalism and interactive articles. <br />
-        Level of difficulty: Moderate and even perhaps easy, because by that point, you are already a HTML, CSS, JavaScript, and data visualisation wizard.
+        used in data journalism and interactive articles or right now, just to
+        show off a bit <br />
+        <strong>Level of difficulty: easy to moderate</strong>By that point, you
+        are already a HTML, CSS, JavaScript, and data visualisation wizard.
+        <strong>My advice</strong> Try as soon as you have a good grasp of
+        Javascript, this will give you a buzz and motivation to keep soldiering
+        on with D3!
+        <br />
+        There are many other libraries that can help you with this (see
+        <a href="https://bsky.app/profile/carlbergstrom.com/post/3lbdskjzjz22w">
+          this Bluesky thread</a>), personally I have learned the IntersectionObserver method.
       </p>
     </div>
 
@@ -185,14 +211,14 @@
   .foreground > div {
     max-width: 60ch;
     margin: 75vh auto 0 auto;
-    padding: 2rem;
+    padding: 1.5rem;
     box-shadow: 0 1px 10px 0px rgba(0, 0, 0, 0.8);
     background-color: var(--clr-primary-8);
   }
 
   /* step_final */
   .foreground > div:first-child {
-    margin-top: -50vh;
+    margin-top: -60vh;
     height: 1px;
     opacity: 0;
     padding: 0;
@@ -213,11 +239,23 @@
     height: 99vh;
     grid-row: 1/-1;
     grid-column: 1/-1;
-
-
   }
 
   h2 {
-  color: var(--clr-primary-2);
+    color: var(--clr-primary-2);
+  }
+
+  strong {
+    color: var(--clr-primary-4);
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    font-weight: bold;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    display: block;
+  }
+
+  a {
+    z-index: 1;
   }
 </style>

@@ -37,7 +37,6 @@
     //// uncomment if you don't need any custom function
     custom,
   };
-
 </script>
 
 <h2>The bar chart</h2>
@@ -53,5 +52,6 @@
   .chart-container {
     height: 20rem;
     width: 100%;
+    margin-bottom: 5rem;
   }
 </style>
