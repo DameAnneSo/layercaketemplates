@@ -166,16 +166,18 @@
         unfortunately, outside of the
         <a href="https://layercake.graphics/guide" target="_blank">
           official documentation</a
-        >. LayerCake.js is worth learning once you get frustrated with writing the same repetitive parts of D3.js and Svelte.
+        >. LayerCake.js is worth learning once you get frustrated with writing
+        the same repetitive parts of D3.js and Svelte.
       </p>
     </div>
 
     <div class="step7">
-      <h2>#7: Scrollytelling Techniques</h2>
+      <h2>#7: Scrollytelling</h2>
       <p>
-        Scrollytelling is this cool technique you are experiencing right now that that combines scrolling with
-        storytelling to create engaging and interactive narratives. It is often
-        used in data journalism and interactive articles<br />
+        Scrollytelling is this cool technique you are experiencing right now
+        that that combines scrolling with storytelling to create engaging and
+        interactive narratives. It is often used in data journalism and
+        interactive articles<br />
         <strong>Level of difficulty: easy to moderate</strong>By that point, you
         are already a HTML, CSS, JavaScript, and data visualisation wizard.
         <strong>My advice</strong>
@@ -239,6 +241,4 @@
     grid-row: 1/-1;
     grid-column: 1/-1;
   }
-
-  
 </style>

@@ -20,7 +20,6 @@
 </script>
 
 <Svg>
-  <!-- Add :sort to disable automatic sorting -->
   <g class="bar-group">
     {#each $data as d, i}
       <rect

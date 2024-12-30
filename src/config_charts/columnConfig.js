@@ -1,6 +1,6 @@
 const colorFunction = () => "var(--clr-primary-3)";
 
-const padding = { top: 20, right: 0, bottom: 20, left: 0 };
+const padding = { top: 20, right: 0, bottom: 20, left: 5 };
 
 const custom = {
   colorFunction,
@@ -22,4 +22,3 @@ export const columnConfig = {
   yDomain: [0, null], // null because there is will be a  calculated value for the maxDomain not to overflow
   padding,
 };
-

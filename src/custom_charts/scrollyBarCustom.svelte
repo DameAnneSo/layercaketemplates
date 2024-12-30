@@ -5,14 +5,9 @@
   import AxisY from "../graphics/axisY.svelte";
   import ScrollyBar from "../graphics/scrollyBar.svelte";
   import { scaleBand } from "d3-scale";
-  import dataRaw from "../data/learning_data.csv";
 
-  // get data from learning_data.csv in the data folder
-  import { onMount } from "svelte";
-
-  onMount(() => {
-    draw();
-  });
+  // get data from data folder
+  import dataRaw from "../data/scrolly_bar_data.csv";
 
   let newData = dataRaw.map((d) => ({
     index: +d.index,
@@ -20,25 +15,14 @@
     value: +d.value,
     category: d.special,
   }));
-  // console.log(newData);
 
-  // Draw the chart
-  let hasDrawn = false;
-  const draw = () => {
-    setTimeout(() => {
-      hasDrawn = true;
-    }, 500);
-  };
-
-  // //// Custom functions
+  //// (Optional) Custom functions
   const colorFunction = (d) => {
-    // if first category then clr1, else clr2
     return d.category === barConfig.data[0].category
       ? "var(--clr-primary-3)"
       : "var(--clr-primary-8)";
   };
 
-  // const colorFunction = () => "var(--clr-primary-3)";
   const custom = {
     colorFunction,
   };
@@ -71,7 +55,7 @@
 <style>
   .scrolly-column {
     margin: 0 auto;
-    width: 75%; 
+    width: 75%;
     max-width: 1200px; /* Limit maximum width for very large screens */
     height: 100%;
     display: grid;

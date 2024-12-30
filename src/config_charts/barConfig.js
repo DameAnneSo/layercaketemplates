@@ -1,4 +1,4 @@
-const padding = { top: 20, right:0, bottom: 20, left: 0 };
+const padding = { top: 20, right:0, bottom: 20, left: 5 };
 
 const barData = [
   { key: "owner 1", value: 0.5, category: "cat" },
@@ -19,6 +19,5 @@ export const barConfig = {
   x: "value",
   y: "key",
   xDomain: [0, null], // null because there is will be a  calculated value for the maxDomain not to overflow
-  yDomain: barData.map(d => d.key), // This preserves original order
   padding,
 };

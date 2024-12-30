@@ -5,6 +5,7 @@
   import AxisX from "../graphics/axisX.svelte";
   import AxisY from "../graphics/axisY.svelte";
 
+
   const newData = [
     { key: 0.5, value: 0.5, category: "cat" },
     { key: 1, value: 1, category: "dog" },
@@ -14,9 +15,8 @@
     { key: 5, value: 12, category: "cat" },
   ];
 
-  //// Custom functions
+  //// (Optional) Custom functions
   const colorFunction = (d) => {
-    // if first category then clr1, else clr2
     return d.category === scatterplotConfig.data[0].category
       ? "var(--clr-primary-3)"
       : "var(--clr-grey-4)";
@@ -49,15 +49,7 @@
 </div>
 
 <style>
-  .scrolly-column {
-    margin: 0 auto;
-    width: 60%; /* takes room of 60 characters */
-    /* height: 100%; */
-    max-width: 1200px; /* Limit maximum width for very large screens */
-    height: 100%;
-    display: grid;
-    place-items: center;
-  }
+
 
   .chart-container {
     height: 20rem;

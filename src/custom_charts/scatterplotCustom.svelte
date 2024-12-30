@@ -5,45 +5,44 @@
   import AxisX from "../graphics/axisX.svelte";
   import AxisY from "../graphics/axisY.svelte";
 
-  const newData = [
-    { key: 0.5, value: 0.5, category: "cat" },
-    { key: 1, value: 1, category: "dog" },
-    { key: 2, value: 5, category: "dog" },
-    { key: 3, value: 5, category: "dog" },
-    { key: 4, value: 4, category: "cat" },
-    { key: 5, value: 12, category: "cat" },
-  ];
+  import dataRaw from "../data/scatterplot_data.csv";
 
-  //// Custom functions
-  const colorFunction = (d) => {
-    // if first category then clr1, else clr2
-    return d.category === scatterplotConfig.data[0].category
-      ? "var(--clr-primary-3)"
-      : "var(--clr-primary-5)";
-  };
+  const newData = dataRaw.map((d) => ({
+    index: +d.index,
+    key: d.key,
+    value: +d.value,
+    category: d.category,
+  }));
 
-  const custom = {
-    colorFunction,
-  };
+  //// (Optional) Custom functions
+  // const colorFunction = (d) => {
+  //   // if first category then clr1, else clr2
+  //   return d.category === newData[0].category
+  //     ? "var(--clr-primary-3)"
+  //     : "var(--clr-primary-5)";
+  // };
+
+  // const custom = {
+  //   colorFunction,
+  // };
 
   //// Configuration
   const config = {
     ...scatterplotConfig,
-    //// uncomment to switch  to newData
-    // data: newData,
+    data: newData,
     //// uncomment if you don't need any custom function
-    custom,
+    // custom,
   };
 
   // console.log(scatterplotConfig);
 </script>
 
 <h2>The scatterplot</h2>
-<p>Number of pets and levels of happiness</p>
+<p>→ Number of pets VS ↑ levels of happiness</p>
 <div class="chart-container">
   <LayerCake {...config} debug={false}>
-    <AxisX ticks={5} gridlines={true} />
-    <AxisY gridlines={true} />
+    <AxisX ticks={10} gridlines={true} />
+    <AxisY gridlines={false} />
     <Scatterplot />
   </LayerCake>
 </div>

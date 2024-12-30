@@ -2,8 +2,7 @@ import { scaleBand } from "d3-scale";
 import { calculateMaxDomain } from "../utils/helpers.js";
 const colorFunction = () => "var(--clr-primary-3)";
 
-const padding = { top: 20, right: 0, bottom: 20, left: 0 };
-
+const padding = { top: 20, right: 0, bottom: 20, left: 5 };
 const custom = {
   colorFunction,
   calculateMaxDomain,

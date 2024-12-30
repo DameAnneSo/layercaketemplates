@@ -1,7 +1,7 @@
 <script>
   import { getContext } from "svelte";
   import { Svg } from "layercake";
-  const { width, height, xScale, yRange } = getContext("LayerCake");
+  const { width, height, xScale, yScale, yRange } = getContext("LayerCake");
 
   // example of a prop that can be passed in in the custom chart
   export let pinkCircle = false;
@@ -37,6 +37,9 @@
 
   /** Show a solid line at the bottom. */
   export let baseline = true;
+
+  /** Show a zero line. */
+  export let zeroline = false;
 
   /**OTHER CALCULATIONS**/
   /**@param {Number} i
@@ -86,6 +89,16 @@
     {#each tickVals as tick, i (tick)}
       {#if baseline === true}
         <line class="baseline" y1={$height} y2={$height} x1="0" x2={$width} />
+      {/if}
+
+      {#if zeroline === true}
+        <line
+          class="zeroline"
+          y1={$yScale(0)}
+          y2={$yScale(0)}
+          x1="0"
+          x2={$width}
+        />
       {/if}
       <g
         class="tick tick-{i}"
@@ -146,5 +159,10 @@
   }
   .axis.snapLabels .tick.tick-0 text {
     transform: translateX(-3px);
+  }
+
+  .zeroline {
+    stroke: var(--clr-grey-10);
+    stroke-dasharray: 2;
   }
 </style>

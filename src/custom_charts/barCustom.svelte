@@ -6,23 +6,21 @@
   import Bar from "../graphics/bar.svelte";
   import { scaleBand } from "d3-scale";
 
-  const newData = [
-    { key: "owner 1", value: 10, category: "cat" },
-    { key: "owner 2", value: 1, category: "dog" },
-    { key: "owner 3", value: 2, category: "dog" },
-    { key: "owner 4", value: 5, category: "dog" },
-    { key: "owner 5", value: 4, category: "cat" },
-    { key: "owner 6", value: 3, category: "cat" },
-  ];
-  // //// Custom functions
+  import dataRaw from "../data/bar_data.csv";
+  const newData = dataRaw.map((d) => ({
+    index: +d.index,
+    key: d.key,
+    value: +d.value,
+    category: d.category,
+  }));
+
+  //// (Optional) Custom functions
   const colorFunction = (d) => {
-    // if first category then clr1, else clr2
     return d.category === barConfig.data[0].category
       ? "var(--clr-primary-3)"
       : "var(--clr-primary-8)";
   };
 
-  // const colorFunction = () => "var(--clr-primary-3)";
   const custom = {
     colorFunction,
   };
@@ -30,9 +28,9 @@
   //// Configuration
   const config = {
     ...barConfig,
-    padding: { top: 20, right: 60, bottom: 20, left: 0 },
+    padding: { top: 20, right: 20, bottom: 20, left: 50 },
     yScale: scaleBand().padding(0.05),
-    //// uncomment to switch  to newData
+    yDomain: newData.map((d) => d.key), // This preserves original order
     data: newData,
     //// uncomment if you don't need any custom function
     custom,
@@ -40,12 +38,12 @@
 </script>
 
 <h2>The bar chart</h2>
-<p>Number of toes per animal</p>
+<p>→ Number of toes per animal</p>
 <div class="chart-container">
   <LayerCake {...config} debug={false}>
-    <AxisX ticks={10} pinkCircle={false} />
+    <AxisX ticks={5} />
     <AxisY tickMarks={false} />
-    <Bar />
+    <Bar labels={false} />
   </LayerCake>
 </div>
 

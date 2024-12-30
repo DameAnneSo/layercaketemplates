@@ -1,6 +1,6 @@
 # Chart templates
 
-Creating standard charts with D3, Svelte and LayerCake
+How I have learnt D3 & Svelte + my library of standard charts with D3, Svelte and LayerCake
 
 ## 👋 About Me
 

@@ -7,33 +7,20 @@
   import AxisY from "../graphics/axisY.svelte";
   import Line from "../graphics/line.svelte";
 
-  const newData = [
-    { key: 1, value: 13, category: "cat" },
-    { key: 2, value: 2, category: "cat" },
-    { key: 3, value: 3, category: "cat" },
-    { key: 4, value: 4, category: "cat" },
-    { key: 5, value: 5, category: "cat" },
-    { key: 6, value: 6, category: "cat" },
-    { key: 7, value: 7, category: "cat" },
-    { key: 8, value: 8, category: "cat" },
-    { key: 9, value: 9, category: "cat" },
-    // { key: 1, value: 1, category: "dog" },
-    // { key:2, value: 3, category: "dog" },
-    // { key:3, value: 4, category: "dog" },
-    // { key:4, value: 5, category: "dog" },
-    // { key:5, value: 6, category: "dog" },
-    // { key:6, value: 7, category: "dog" },
-    // { key:7, value: 8, category: "dog" },
-    // { key:8, value: 9, category: "dog" },
-    // { key:9, value: 10, category: "dog" },
-  ];
+  import dataRaw from "../data/line_data.csv";
 
-  //// Custom functions
+  const newData = dataRaw.map((d) => ({
+    key: +d.key,
+    value: +d.value,
+    category: d.category,
+  }));
+
+  //// (Optional) Custom functions
   const colorFunction = (d) => {
     // if first category then clr1, else clr2
-    return d.category === lineConfig.data[0].category
+    return d.category === newData[0].category
       ? "var(--clr-primary-3)"
-      : "var(--clr-primary-8)";
+      : "var(--clr-grey-9)";
   };
 
   const custom = {
@@ -44,7 +31,6 @@
   //// Configuration
   const config = {
     ...lineConfig,
-    //// uncomment to switch  to newData
     data: newData,
     //// uncomment if you don't need any custom function
     custom,
@@ -52,12 +38,15 @@
 </script>
 
 <h2>The line chart</h2>
-<p>Levels of confidence I will be able to learn D3 vs time spent learning</p>
+<p>→ Time spent learning dataviz VS ↑ levels of confidence I'll be able to pull a line chart<br />
+  <span class="category1">expectations</span> Vs
+  <span class="category2">reality</span>
+</p>
 <div class="chart-container">
   <LayerCake {...config} debug={false}>
-    <AxisX />
+    <AxisX ticks={5} zeroline={true} />
     <AxisY />
-    <Line />
+    <Line labels={false} />
   </LayerCake>
 </div>
 
@@ -66,5 +55,21 @@
     height: 20rem;
     width: 100%;
     margin-bottom: 5rem;
+  }
+
+  .category1,
+  .category2{
+    padding: 0.2rem;
+    margin: 0.1rem;
+    border-radius: 0.2rem;
+  }
+
+  .category1 {
+    background-color: var(--clr-grey-9);
+  }
+
+  .category2 {
+    background-color: var(--clr-primary-3);
+    color: var(--clr-primary-8);
   }
 </style>

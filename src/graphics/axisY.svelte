@@ -1,7 +1,7 @@
 <script>
   import { getContext } from "svelte";
   import { Svg } from "layercake";
-  const { xRange, yScale, width, height } = getContext("LayerCake");
+  const { xRange, yScale, width, xScale, height } = getContext("LayerCake");
 
   /**TICKS**/
   /* Show marks next to the tick label. */
@@ -31,9 +31,9 @@
   /* Optional value passed to the `dy` attribute on the text label. */
   export let dy = 0;
 
-   /* Used to calculate the widest label length to offset labels. Adjust if the automatic tick length doesn't look right because you have a bigger font (or just set `tickMarkLength` to a pixel value). */
+  /* Used to calculate the widest label length to offset labels. Adjust if the automatic tick length doesn't look right because you have a bigger font (or just set `tickMarkLength` to a pixel value). */
   export let charPixelWidth = 7.25;
-  
+
   /**GRID AND BASELINE**/
   /* Show gridlines */
   export let gridlines = false;
@@ -137,5 +137,4 @@
   .gridline {
     stroke-dasharray: 2;
   }
-
 </style>

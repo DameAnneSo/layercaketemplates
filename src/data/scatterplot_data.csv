@@ -1,9 +1,9 @@
 ﻿placeholder,index,key,value,category
-1,1,1,1,cats
-2,2,2,3,dogs
-3,3,3,2,cats
+1,1,1,5,cats
+2,2,2,6,dogs
+3,3,3,7,cats
 4,4,4,8,dogs
-5,5,5,10,cats
-6,6,6,7,cats
-7,7,7,7,cats
-8,8,8,6,dogs
+5,5,5,9,cats
+6,6,6,10,cats
+7,7,7,5,cats
+8,8,8,1,dogs

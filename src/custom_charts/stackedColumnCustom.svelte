@@ -5,28 +5,24 @@
   import AxisX from "../graphics/axisX.svelte";
   import AxisY from "../graphics/axisY.svelte";
   import StackedColumn from "../graphics/stackedColumn.svelte";
+  import dataRaw from "../data/stacked_data.csv";
 
-  const newStackedData = [
-    { key: 1, value: 12, category: "cat" },
-    { key: 1, value: 1, category: "dog" },
-    { key: 2, value: 2, category: "dog" },
-    { key: 2, value: 5, category: "cat" },
-    { key: 3, value: 4, category: "cat" },
-    { key: 3, value: 0, category: "dog" },
-  ];
+  const newData = dataRaw.map((d) => ({
+    key: d.key,
+    value: +d.value,
+    category: d.category,
+  }));
 
   //// replace stackedColumnConfig.data with newStackedData
-  const MaxDomain = stackedColumnConfig.custom.calculateMaxDomain(
-    stackedColumnConfig.data
-  );
+  const MaxDomain = stackedColumnConfig.custom.calculateMaxDomain(newData);
 
   //// (Optional) Custom functions
-  //// replace stackedColumnConfig.data with newStackedData
   const colorFunction = (d) => {
-    //// if first category then colour1, else colour2
-    return d.category === stackedColumnConfig.data[0].category
+    return d.category === newData[0].category
       ? "var(--clr-primary-3)"
-      : "var(--clr-primary-8)";
+      : d.category === newData[1].category
+        ? "var(--clr-primary-8)"
+        : "var(--clr-grey-10)";
   };
   const custom = {
     colorFunction,
@@ -34,27 +30,26 @@
 
   const config = {
     ...stackedColumnConfig,
-    //// uncomment to switch to newStackedData
-    // data: newStackedData,
+    data: newData,
     yDomain: [0, MaxDomain],
+    xDomain: newData.map((d) => d.key), // This preserves original order
     custom,
   };
 
-  //// Troubleshooting
-  // console.log(stackedColumnConfig);
+
 </script>
 
 <h2>The stacked column chart</h2>
 <p>
-  <span class="espresso">Espresso</span> 
-  <span class="steamed_milk">Steamed Milk</span> 
-  <span class="milk_foam">Milk foam</span> ratios in different coffees
+  <span class="category1">Espresso</span>
+  <span class="category2">Steamed Milk</span>
+  <span class="category3">Milk foam</span> ratios in different coffees
 </p>
 <div class="chart-container">
   <LayerCake {...config} debug={false}>
-    <AxisX tickMarks="{false}/" />
+    <AxisX />
     <AxisY />
-    <StackedColumn />
+    <StackedColumn labels={false} />
   </LayerCake>
 </div>
 
@@ -65,23 +60,24 @@
     margin-bottom: 5rem;
   }
 
-  .espresso,
-  .steamed_milk,
-  .milk_foam {
+  .category1,
+  .category2,
+  .category3 {
     padding: 0.2rem;
     margin: 0.1rem;
     border-radius: 0.2rem;
   }
 
-  .espresso {
+  .category1 {
     background-color: var(--clr-primary-3);
+    color: var(--clr-primary-8);
   }
 
-  .steamed_milk {
+  .category2 {
     background-color: var(--clr-primary-8);
   }
 
-  .milk_foam {
-    background-color: var(--clr-primary-5);
+  .category3 {
+    background-color: var(--clr-grey-10);
   }
 </style>
