@@ -39,6 +39,7 @@
 </script>
 
 <h2>The scatterplot</h2>
+<p>Number of pets and levels of happiness</p>
 <div class="chart-container">
   <LayerCake {...config} debug={false}>
     <AxisX ticks={5} gridlines={true} />

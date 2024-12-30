@@ -52,6 +52,7 @@
 </script>
 
 <h2>The line chart</h2>
+<p>Levels of confidence I will be able to learn D3 vs time spent learning</p>
 <div class="chart-container">
   <LayerCake {...config} debug={false}>
     <AxisX />

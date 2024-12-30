@@ -240,21 +240,5 @@
     grid-column: 1/-1;
   }
 
-  h2 {
-    color: var(--clr-primary-2);
-  }
-
-  strong {
-    color: var(--clr-primary-4);
-    text-transform: uppercase;
-    font-size: 0.8rem;
-    font-weight: bold;
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    display: block;
-  }
-
-  a {
-    z-index: 1;
-  }
+  
 </style>

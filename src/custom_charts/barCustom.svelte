@@ -40,6 +40,7 @@
 </script>
 
 <h2>The bar chart</h2>
+<p>Number of toes per animal</p>
 <div class="chart-container">
   <LayerCake {...config} debug={false}>
     <AxisX ticks={10} pinkCircle={false} />

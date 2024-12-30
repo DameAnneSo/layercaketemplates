@@ -45,6 +45,11 @@
 </script>
 
 <h2>The stacked bar chart</h2>
+<p>
+  <span class="espresso">Espresso</span> 
+  <span class="steamed_milk">Steamed Milk</span> 
+  <span class="milk_foam">Milk foam</span> ratios in different coffees
+</p>
 <div class="chart-container">
   <LayerCake {...config} debug={false}>
     <AxisX />
@@ -58,5 +63,24 @@
     height: 20rem;
     width: 100%;
     margin-bottom: 5rem;
+  }
+
+  .espresso, .steamed_milk, .milk_foam {
+    padding: 0.2rem;
+    margin: 0.1rem;
+    border-radius: 0.2rem;
+  }
+
+  .espresso {
+    background-color: var(--clr-primary-3);
+  
+  }
+
+  .steamed_milk{
+    background-color: var(--clr-primary-8);
+  }
+
+  .milk_foam {
+    background-color: var(--clr-primary-5);
   }
 </style>

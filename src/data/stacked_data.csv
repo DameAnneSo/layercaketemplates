@@ -1,0 +1,16 @@
+﻿placeholder,index,key,value,category
+1,1,espresso,1,espresso
+2,2,espresso,0,milk foam
+3,3,espresso,0,steamed milk
+4,4,macchiato,1,espresso
+5,5,macchiato,1,milk foam
+6,6,macchiato,0,steamed milk
+7,7,latte,1,espresso
+8,8,latte,1,milk foam
+9,9,latte,1,steamed milk
+10,10,flat white,1,espresso
+11,11,flat white,0,milk foam
+12,12,flat white,1,steamed milk
+13,13,cappuccino,1,espresso
+14,14,cappuccino,1,milk foam
+15,15,cappuccino,1,steamed milk
