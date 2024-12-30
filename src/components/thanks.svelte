@@ -7,7 +7,7 @@
     target="_blank"
   >
     Georges Corbineau
-  </a>for your patience in teaching me all those concepts and techniques.
+  </a>for your patience in teaching me all those concepts and techniques!
 </div>
 
 <style>

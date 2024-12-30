@@ -71,7 +71,7 @@
 <style>
   .scrolly-column {
     margin: 0 auto;
-    width: 60%; /* takes room of 60 characters */
+    width: 75%; 
     max-width: 1200px; /* Limit maximum width for very large screens */
     height: 100%;
     display: grid;

@@ -19,7 +19,7 @@
 
 <div class="page-column">
   <div class="hero-center">
-    <h1>Dataviz ready to go</h1>
+    <h1>Learning D3 & Svelte</h1>
     <p>
       Charts and scrollytelling templates made with D3.js, Svelte and
       LayerCake.js
@@ -55,9 +55,14 @@
     align-content: center;
   }
 
-  .hero-center h1 {
+  h1 {
     font-size: 4rem;
     text-transform: uppercase;
+    text-align: center;
+  }
+
+.hero-center p {
+    text-align: center;
   }
 
   img {

@@ -57,24 +57,27 @@
   <div class="foreground">
     <div class="step_intro"></div>
     <div class="step_subtitle">
-      <h2>Learning D3 is a steep learning curve. But it's worth it!</h2>
+      <h2>
+        Learning coding for dataviz is a steep learning curve. But it's worth
+        it!
+      </h2>
       <p>
-        Embarking on the journey to learn front-end web development and data
-        visualisation can be both exciting and rewarding. <br />
-        This website is a project designed to showcase the learning steps I have
-        been through in 2024.
+        This website is a project designed to share my journey and showcase what
+        I have learned in 2024.
       </p>
     </div>
     <div class="step1">
       <h2>#1: HTML & CSS</h2>
       <p>
-        HTML is the standard language for creating web pages. It provides the
-        structure of a webpage. CSS is used to style and layout web pages,
-        including the design, colours, and fonts. <br />
-        <strong>Level of difficulty: easy</strong> HTML and CSS are
+        HTML provides the structure of a webpage. CSS is used to style and
+        layout web pages<br />
+        <strong>Level of difficulty: easy</strong>HTML and CSS are
         beginner-friendly.<br />
-        <strong>My advice:</strong> Don't skimp on advanced CSS, it's a game
-        changer. If you have time, practise by building your portfolio website,
+        <strong>My advice:</strong> Don't skimp on advanced CSS (animations,
+        grid, flexbox, etc.); it will be a game changer later on, allowing you
+        to rely on JavaScript as little as possible to add pizzazz to your
+        creations. If you have time, practise by building your portfolio
+        website,
         <a href="https://curiousdata.netlify.app/" target="_blank">
           like I did.</a
         >
@@ -90,47 +93,44 @@
         <strong>Level of difficulty: easy</strong> Understanding the basics of
         SVG is straightforward.
         <strong>My advice</strong>Even if that's for later down the line, option
-        to reading Data Sketches or
+        to read Data Sketches or
         <a href="https://www.visualcinnamon.com/blog/" target="_blank">
           Nadieh Bremer's blog</a
-        > for inspiration on how to use SVG in creative ways.
+        > to get a sense of the creative power of SVGs.
       </p>
     </div>
     <div class="step3">
       <h2>#3: JavaScript</h2>
       <p>
-        JavaScript is a programming language that allows you to create dynamic
-        and interactive web content. It is used to add functionality to web
-        pages, such as form validation, interactive maps, and animations. <br />
+        JavaScript is a programming language that allows you to add
+        functionality to web pages, such as form validation or interactive
+        buttons. <br />
         <strong>Level of difficulty: Difficult (at least for me)</strong>
-        JavaScript has a steeper learning curve, compared to HTML and CSS, but you
-        won't be able to skip the fundamentals.
+        A steeper learning curve, compared to HTML and CSS.
         <strong>My advice</strong>
         Stick to the basics when you learn for the first time. I have lost myself
-        into a great 40+ hour (great) course, but my goal is not to become a front
-        web dev. You want to start dabbling in dataviz as soon as possible.
+        into a (great) 40+ hour course, but my goal is not to become a front web
+        dev. You want to start dabbling in dataviz as soon as possible.
       </p>
     </div>
 
     <div class="step4">
       <h2>#4: D3.js</h2>
       <p>
-        A JavaScript library for creating dynamic, interactive data
-        visualisations in web browsers. <br />
-        <strong
-          >Level of difficulty: borderline discouraging (at least for me)</strong
-        >
+        A JavaScript library for creating dynamic and interactive data
+        visualisations.<br />
+        <strong>Level of difficulty: borderline discouraging (for me)</strong>
         Challenging for beginners, but don't despair, Svelte and LayerCake.js will
-        help later on.
-        <strong> My advice</strong>While you are learning the previous
-        languages, experiment with the chart libraries built on top of D3.js,
+        simplify some bits later on.
+        <strong> My advice</strong>While you are learning HTML, CSS, SVG and
+        Javascript, experiment with the chart libraries built on top of D3.js,
         such as
         <a href="https://www.rawgraphs.io/" target="_blank"> RawGraphs</a>
         or <a href="https://flourish.studio/" target="_blank"> Flourish</a> or
         <a href="https://observablehq.com/" target="_blank">
           Observable notebooks</a
-        >. This will give you a good illustration of the blocs you will start
-        with.
+        >. This is much easier and will give you a good illustration of the
+        blocs you will start with.
       </p>
     </div>
 
@@ -148,8 +148,8 @@
         <strong>Level of difficulty: moderate</strong> Svelte is easier to learn
         compared to some other frameworks.
         <strong> My advice</strong> The hardest part for me was not to despair with
-        Javascript and D3, and keep going until I got to the Svelte part. But Svelte
-        simplified a lot of things for me. So keep going!
+        Javascript and D3, and keep going until I got to the Svelte part. So keep
+        going!
       </p>
     </div>
 
@@ -162,28 +162,27 @@
         <strong>Level of difficulty: moderate</strong>Using LayerCake.js
         requires knowledge of both Svelte and data visualisation principles.
         <br />
-        <strong>My advice</strong> Very few tutorials on LayerCake.js unfortunately.
-        Perhaps worth learning once you get frustrated by having to constantly write
-        the same boring parts of D3.js and Svelte.
+        <strong>My advice</strong> Very few tutorials on LayerCake.js
+        unfortunately, outside of the
+        <a href="https://layercake.graphics/guide" target="_blank">
+          official documentation</a
+        >. LayerCake.js is worth learning once you get frustrated with writing the same repetitive parts of D3.js and Svelte.
       </p>
     </div>
 
     <div class="step7">
       <h2>#7: Scrollytelling Techniques</h2>
       <p>
-        Scrollytelling is that cool technique that combines scrolling with
+        Scrollytelling is this cool technique you are experiencing right now that that combines scrolling with
         storytelling to create engaging and interactive narratives. It is often
-        used in data journalism and interactive articles or right now, just to
-        show off a bit <br />
+        used in data journalism and interactive articles<br />
         <strong>Level of difficulty: easy to moderate</strong>By that point, you
         are already a HTML, CSS, JavaScript, and data visualisation wizard.
-        <strong>My advice</strong> Try as soon as you have a good grasp of
-        Javascript, this will give you a buzz and motivation to keep soldiering
-        on with D3!
-        <br />
-        There are many other libraries that can help you with this (see
+        <strong>My advice</strong>
+        There are many other libraries that can help you with scrollytelling (see
         <a href="https://bsky.app/profile/carlbergstrom.com/post/3lbdskjzjz22w">
-          this Bluesky thread</a>), personally I have learned the IntersectionObserver method.
+          this Bluesky thread</a
+        >), personally I have been taught the IntersectionObserver method.
       </p>
     </div>
 
