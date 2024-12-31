@@ -10,7 +10,7 @@
 
     const options = {
       root: null, // it is the viewport and it's the default value
-      threshold: 0, // 0.5 means when 50% of the element is visible. Scale is from 0 to 1. Default is 0. If we set it to 1, it means the element needs to be fully visible to trigger the callback; be careful how it interacts with rootmargin though.
+      threshold: 0.1, // 0.5 means when 50% of the element is visible. Scale is from 0 to 1. Default is 0. If we set it to 1, it means the element needs to be fully visible to trigger the callback; be careful how it interacts with rootmargin though.
       rootMargin: "-15%",
     };
 
@@ -58,12 +58,11 @@
     <div class="step_intro"></div>
     <div class="step_subtitle">
       <h2>
-        Learning coding for dataviz is a steep learning curve. But it's worth
-        it!
+        Learning coding for dataviz is a steep learning curve.
       </h2>
       <p>
-        This website is a project designed to share my journey and showcase what
-        I have learned in 2024.
+        This website is designed to showcase what
+        I have learned in 2024 and how I have built my tech stack, as someone who is not a developer by trade.
       </p>
     </div>
     <div class="step1">
@@ -217,20 +216,23 @@
     background-color: var(--clr-primary-8);
   }
 
-  /* step_final */
-  .foreground > div:first-child {
+  /* step_intro */
+  .foreground > div:first-child
+   {
     margin-top: -60vh;
     height: 1px;
     opacity: 0;
     padding: 0;
   }
-  /* step_intro */
+
+  /* step_final */
   .foreground > div:last-child {
     margin-top: 50vh;
     height: 1px;
     opacity: 0;
     padding: 0;
   }
+
 
   .background {
     position: sticky;
