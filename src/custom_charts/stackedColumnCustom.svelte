@@ -26,8 +26,6 @@
   };
 
   const labelFunction = (d, key, data) => {
-    // Add console.log to debug the values we receive
-    console.log("Debug:", { value: d, key: key, data: data });
     // Only show label if value is not 0
     if (d === 0) return "";
     // Handle plural form

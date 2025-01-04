@@ -8,11 +8,12 @@
   >
     Georges Corbineau
   </a>for your patience in teaching me all those concepts and techniques!
+
+  
 </div>
 
 <style>
   .thanks {
-    display: grid;
     margin-top: 2rem;
     padding-top: 1rem;
     padding-bottom: 2rem;
