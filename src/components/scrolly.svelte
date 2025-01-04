@@ -214,6 +214,7 @@
     padding: 1.5rem;
     box-shadow: 0 1px 10px 0px rgba(0, 0, 0, 0.8);
     background-color: var(--clr-primary-8);
+    pointer-events: all;
   }
 
   /* step_intro */

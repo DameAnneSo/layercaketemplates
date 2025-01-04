@@ -1,6 +1,6 @@
 <script>
   import { LayerCake } from "layercake";
-  import { columnConfig } from "../config_charts/columnConfig.js";
+  import { columnConfig } from "../default_charts/columnConfig.js";
 
   import AxisX from "../graphics/axisX.svelte";
   import AxisY from "../graphics/axisY.svelte";
@@ -17,17 +17,21 @@
     category: d.category,
   }));
 
- 
- //// Custom functions
+  //// Custom functions
   const colorFunction = (d) => {
-    // if first category then clr1, else clr2
     return d.category === newData[0].category
       ? "var(--clr-primary-3)"
       : "var(--clr-primary-8)";
   };
 
+  const labelFunction = (d) => {
+    return d.value === 1 ? d.value + " toe" : d.value + " toes";
+  };
+
   const custom = {
+    ariaLabel: "Number of toes per animal",
     colorFunction,
+    labelFunction,
   };
 
   //// (Optional) Configuration
@@ -35,8 +39,7 @@
     ...columnConfig,
     xScale: scaleBand().padding(0.2),
     data: newData,
-    xDomain: newData.map(d => d.key), // This preserves original order
-    //// uncomment if you don't need any custom function
+    xDomain: newData.map((d) => d.key), // This preserves original order
     custom,
   };
 </script>
@@ -47,7 +50,7 @@
   <LayerCake {...config} debug={false}>
     <AxisX pinkCircle={false} tickMarks={false} />
     <AxisY ticks={5} />
-    <Column labels={false}/>
+    <Column />
   </LayerCake>
 </div>
 

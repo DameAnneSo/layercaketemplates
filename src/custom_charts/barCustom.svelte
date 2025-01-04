@@ -1,6 +1,6 @@
 <script>
   import { LayerCake } from "layercake";
-  import { barConfig } from "../config_charts/barConfig.js";
+  import { barConfig } from "../default_charts/barConfig.js";
   import AxisX from "../graphics/axisX.svelte";
   import AxisY from "../graphics/axisY.svelte";
   import Bar from "../graphics/bar.svelte";
@@ -21,8 +21,14 @@
       : "var(--clr-primary-8)";
   };
 
+  const labelFunction = (d) => {
+    return d.value === 1 ? d.value + " toe" : d.value + " toes";
+  };
+
   const custom = {
+    ariaLabel: "Number of toes per animal",
     colorFunction,
+    labelFunction,
   };
 
   //// Configuration
@@ -32,7 +38,6 @@
     yScale: scaleBand().padding(0.05),
     yDomain: newData.map((d) => d.key), // This preserves original order
     data: newData,
-    //// uncomment if you don't need any custom function
     custom,
   };
 </script>
@@ -43,7 +48,7 @@
   <LayerCake {...config} debug={false}>
     <AxisX ticks={5} />
     <AxisY tickMarks={false} />
-    <Bar labels={false} />
+    <Bar />
   </LayerCake>
 </div>
 

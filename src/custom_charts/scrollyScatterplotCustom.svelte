@@ -1,10 +1,9 @@
 <script>
   import { LayerCake } from "layercake";
-  import { scatterplotConfig } from "../config_charts/scatterplotConfig.js";
+  import { scatterplotConfig } from "../default_charts/scatterplotConfig.js";
   import ScrollyScatterplot from "../graphics/scrollyScatterplot.svelte";
   import AxisX from "../graphics/axisX.svelte";
   import AxisY from "../graphics/axisY.svelte";
-
 
   const newData = [
     { key: 0.5, value: 0.5, category: "cat" },
@@ -22,16 +21,20 @@
       : "var(--clr-grey-4)";
   };
 
+  const labelFunction = (d) => {
+    return `${d.value}: ${d.category}`;
+  };
+  
   const custom = {
+    ariaLabel: "Number of pets VS levels of happiness",
     colorFunction,
+    labelFunction
   };
 
   //// Configuration
   const config = {
     ...scatterplotConfig,
-    //// uncomment to switch  to newData
-    // data: newData,
-    //// uncomment if you don't need any custom function
+    data: newData,
     custom,
   };
 
@@ -43,14 +46,12 @@
     <LayerCake {...config} debug={false}>
       <AxisX ticks={5} gridlines={true} />
       <AxisY gridlines={true} />
-      <ScrollyScatterplot labels={false} />
+      <ScrollyScatterplot />
     </LayerCake>
   </div>
 </div>
 
 <style>
-
-
   .chart-container {
     height: 20rem;
     width: 100%;

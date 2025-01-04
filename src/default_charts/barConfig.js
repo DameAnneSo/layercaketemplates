@@ -10,8 +10,11 @@ const barData = [
 ];
 
 const colorFunction = () => "var(--clr-primary-5)";
+const labelFunction = (d) => d.key;
+
 const custom = {
   colorFunction,
+  labelFunction,
 };
 
 export const barConfig = {

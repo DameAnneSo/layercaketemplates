@@ -1,6 +1,6 @@
 <script>
   import { LayerCake } from "layercake";
-  import { barConfig } from "../config_charts/barConfig.js";
+  import { barConfig } from "../default_charts/barConfig.js";
   import AxisX from "../graphics/axisX.svelte";
   import AxisY from "../graphics/axisY.svelte";
   import ScrollyBar from "../graphics/scrollyBar.svelte";
@@ -23,8 +23,14 @@
       : "var(--clr-primary-8)";
   };
 
+  const labelFunction = (d) => {
+    return `${d.value} / 10`;
+  };
+
   const custom = {
+    ariaLabel: "Dataviz Stack Components & Learning Curve",
     colorFunction,
+    labelFunction,
   };
 
   //// Configuration
@@ -35,7 +41,6 @@
     yScale: scaleBand().padding(0.05),
     //// uncomment to switch  to newData
     data: newData,
-    //// uncomment if you don't need any custom function
     custom,
   };
 </script>

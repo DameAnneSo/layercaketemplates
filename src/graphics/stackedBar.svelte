@@ -28,30 +28,35 @@
   $: $width, $height, $data, renderBars();
 </script>
 
-<Svg>
+<Svg label={$custom.ariaLabel}>
   {#each stackedData as categoryData}
     {#each categoryData as categoryDatum}
       <!-- {console.log(categoryDatum.data[0])} -->
       <rect
-      x={$xScale(categoryDatum[0])}
-      width={$xScale(categoryDatum[1]) - $xScale(categoryDatum[0])}
-      y={$yScale(categoryDatum.data[0])}
-      height={$yScale.bandwidth()}
-      fill={$custom.colorFunction({ category: categoryData.key })}
+        x={$xScale(categoryDatum[0])}
+        width={$xScale(categoryDatum[1]) - $xScale(categoryDatum[0])}
+        y={$yScale(categoryDatum.data[0])}
+        height={$yScale.bandwidth()}
+        fill={$custom.colorFunction({ category: categoryData.key })}
       />
 
       {#if labels}
-      <g class="labels">
-        <text
-        class="label"
-        x={$xScale(categoryDatum[0]) + ($xScale(categoryDatum[1]) - $xScale(categoryDatum[0])) / 2}
-        y={$yScale(categoryDatum.data[0]) + $yScale.bandwidth() / 2}
-        alignment-baseline="middle"
-        text-anchor="middle"
-        >
-        {categoryData.key}: {categoryDatum[1] - categoryDatum[0]}
-        </text>
-      </g>
+        <g class="labels">
+            <text
+            class="label"
+            x={$xScale(categoryDatum[0]) +
+              ($xScale(categoryDatum[1]) - $xScale(categoryDatum[0])) / 2}
+            y={$yScale(categoryDatum.data[0]) + $yScale.bandwidth() / 2}
+            alignment-baseline="middle"
+            text-anchor="middle"
+            >
+            {$custom.labelFunction(
+              categoryDatum[1] - categoryDatum[0],
+              categoryData.key,
+              categoryDatum.data
+            )}
+            </text>
+        </g>
       {/if}
     {/each}
   {/each}

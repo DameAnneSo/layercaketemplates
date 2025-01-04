@@ -32,7 +32,7 @@
   $: $data, $width, $height, renderPath()
 </script>
 
-<Svg>
+<Svg label={$custom.ariaLabel}>
   {#each lineData as lineDatum}
     <path d={lineDatum.path} stroke={$custom.colorFunction(lineDatum)} />{/each}
   
@@ -40,7 +40,7 @@
     {#if labels}
       {#each $data as d}
         <text class="label" x={$xGet(d)} y={$yGet(d) -15} text-anchor="middle">
-          {d.key}: {d.value}
+          {$custom.labelFunction(d)}
         </text>
       {/each}
     {/if}

@@ -6,7 +6,7 @@
 
 <footer class="footer">
   <a href="https://curiousdata.netlify.app/">
-    <img src={Logo} alt="logo" class="nav-logo" />
+    <img src='{Logo}' alt="logo" class="nav-logo" />
     <br />
     Go to the author's website
   </a>

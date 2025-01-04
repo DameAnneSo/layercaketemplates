@@ -1,6 +1,6 @@
 <script>
   import { LayerCake } from "layercake";
-  import { stackedBarConfig } from "../config_charts/stackedBarConfig.js";
+  import { stackedBarConfig } from "../default_charts/stackedBarConfig.js";
 
   import AxisX from "../graphics/axisX.svelte";
   import AxisY from "../graphics/axisY.svelte";
@@ -13,23 +13,31 @@
     category: d.category,
   }));
 
-
   // replace stackedBarConfig.data with newData
-  const MaxDomain = stackedBarConfig.custom.calculateMaxDomain(
-    newData
-  );
+  const MaxDomain = stackedBarConfig.custom.calculateMaxDomain(newData);
 
   //// (Optional) Custom functions
   const colorFunction = (d) => {
-    // if first category then clr1, if second clr2, else clr3
     return d.category === newData[0].category
       ? "var(--clr-primary-3)"
       : d.category === newData[1].category
-      ? "var(--clr-primary-8)"
-      : "var(--clr-grey-10)";
+        ? "var(--clr-primary-10)"
+        : "var(--clr-primary-8)";
   };
+
+  const labelFunction = (d, key, data) => {
+  // Only show label if value is not 0
+  if (d === 0) return '';
+  // Handle plural form
+  const doseText = d === 1 ? 'dose' : 'doses';
+  // Return the formatted string with the coffee name
+  return `${d} ${doseText}`;
+};
+
   const custom = {
+    ariaLabel: "Espresso, Steamed Milk, Milk foam ratios in different coffees",
     colorFunction,
+    labelFunction,
   };
 
   const config = {
@@ -40,20 +48,19 @@
     yDomain: newData.map((d) => d.key), // This preserves original order
     custom,
   };
-
 </script>
 
 <h2>The stacked bar chart</h2>
 <p>
   <span class="category1">Espresso</span>
   <span class="category2">Steamed Milk</span>
-  <span class="category3">Milk foam</span> ratios in different coffees
+  <span class="category3">Milk foam</span> doses in different coffees
 </p>
 <div class="chart-container">
   <LayerCake {...config} debug={false}>
-    <AxisX ticks={3}/>
+    <AxisX ticks={3} />
     <AxisY tickMarks={false} />
-    <StackedBar labels={false}/>
+    <StackedBar />
   </LayerCake>
 </div>
 
@@ -72,16 +79,16 @@
     border-radius: 0.2rem;
   }
 
-  .category1{
+  .category1 {
     background-color: var(--clr-primary-3);
-     color: var(--clr-primary-8);
+    color: var(--clr-primary-8);
   }
 
   .category2 {
     background-color: var(--clr-primary-8);
   }
 
-  .category3{
-    background-color: var(--clr-grey-10);
+  .category3 {
+    background-color: var(--clr-primary-10);
   }
 </style>

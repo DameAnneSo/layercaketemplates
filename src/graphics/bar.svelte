@@ -8,7 +8,7 @@
 
 </script>
 
-<Svg>
+<Svg label={$custom.ariaLabel}>
   <g class="bar-group">
     {#each $data as d, i}
       <rect
@@ -32,7 +32,7 @@
           y={$yGet(d) + $yScale.bandwidth() / 2}
           alignment-baseline="middle"
         >
-          {d.key}: {d.value}
+         {$custom.labelFunction(d)}
         </text>
       {/each}
     </g>

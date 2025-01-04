@@ -41,6 +41,9 @@
   /* Show a solid line on the left */
   export let baseline = true;
 
+  /** Show a zero line. */
+  export let zeroline = false;
+
   /**OTHER CALCULATIONS**/
 
   $: isBandwidth = typeof $yScale.bandwidth === "function";
@@ -89,6 +92,15 @@
       {#if baseline === true}
         <line class="baseline" y1="0" y2={$height} x1="0" x2="0" />
       {/if}
+      {#if zeroline === true && tick === 0}
+        <line
+          class="zeroline"
+          x1={$xScale(0)}
+          x2={$xScale(0)}
+          y1="0"
+          y2={$height}
+        />
+      {/if}
       {@const tickValPx = $yScale(tick)}
       <g
         class="tick tick-{tick}"
@@ -135,6 +147,10 @@
   }
 
   .gridline {
+    stroke-dasharray: 2;
+  }
+  .zeroline {
+    stroke: var(--clr-grey-10);
     stroke-dasharray: 2;
   }
 </style>

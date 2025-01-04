@@ -12,6 +12,7 @@
 
   import Footer from "./components/footer.svelte";
   import Thanks from "./components/thanks.svelte";
+  import Tooltip from "./components/tooltip.svelte";
 
   // set year
   const date = new Date().getFullYear();
@@ -44,10 +45,11 @@
 </div>
 <Thanks />
 <Footer />
-
+<Tooltip let:tooltipDatum>
+  <p>{tooltipDatum.value < 5 ? "It's not so nice" : "It's nice"} to own {tooltipDatum.key} {tooltipDatum.key == 1 ? tooltipDatum.category.slice(0, -1) : tooltipDatum.category}</p>
+</Tooltip>
 
 <style>
-  
   .hero-center {
     min-height: 100vh;
     display: grid;
@@ -61,7 +63,7 @@
     text-align: center;
   }
 
-.hero-center p {
+  .hero-center p {
     text-align: center;
   }
 
@@ -101,5 +103,4 @@
       transform: translateY(-5px);
     }
   }
-
 </style>

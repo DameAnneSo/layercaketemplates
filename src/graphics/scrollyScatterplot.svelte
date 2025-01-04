@@ -7,7 +7,7 @@
 		export let labels = true;
 </script>
 
-<Svg>
+<Svg label={$custom.ariaLabel}>
   <!-- <rect width="100%" height="100%" fill="beige"> </rect> -->
   <g>
     {#each $data as d, i}
@@ -25,7 +25,7 @@
     {#if labels}
       {#each $data as d}
         <text class="label" x={$xGet(d)} y={$yGet(d) - 15} text-anchor="middle">
-          {d.key}: {d.value}
+          {$custom.labelFunction(d)}
         </text>
       {/each}
     {/if}

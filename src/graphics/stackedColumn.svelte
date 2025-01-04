@@ -27,7 +27,7 @@
   $: $width, $height, $data, renderBars();
 </script>
 
-<Svg>
+<Svg label={$custom.ariaLabel}>
   {#each stackedData as categoryData}
     {#each categoryData as categoryDatum}
       <!-- {console.log(categoryDatum.data[0])} -->
@@ -49,7 +49,11 @@
             y={$yScale(categoryDatum[1]) + ($yScale(categoryDatum[0]) - $yScale(categoryDatum[1])) / 2}
             text-anchor="middle"
           >
-            {categoryData.key}: {categoryDatum[1] - categoryDatum[0]}
+           {$custom.labelFunction(
+              categoryDatum[1] - categoryDatum[0],
+              categoryData.key,
+              categoryDatum.data
+            )}
           </text>
         {/each}
       </g>

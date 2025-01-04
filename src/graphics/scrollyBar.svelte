@@ -44,7 +44,7 @@
           alignment-baseline="middle"
           text-anchor="end"
         >
-          {d.value}/10
+          {$custom.labelFunction(d)}
         </text>
       {/each}
     </g>

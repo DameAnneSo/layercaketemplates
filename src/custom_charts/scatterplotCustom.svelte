@@ -1,6 +1,6 @@
 <script>
   import { LayerCake } from "layercake";
-  import { scatterplotConfig } from "../config_charts/scatterplotConfig.js";
+  import { scatterplotConfig } from "../default_charts/scatterplotConfig.js";
   import Scatterplot from "../graphics/scatterplot.svelte";
   import AxisX from "../graphics/axisX.svelte";
   import AxisY from "../graphics/axisY.svelte";
@@ -15,23 +15,27 @@
   }));
 
   //// (Optional) Custom functions
-  // const colorFunction = (d) => {
-  //   // if first category then clr1, else clr2
-  //   return d.category === newData[0].category
-  //     ? "var(--clr-primary-3)"
-  //     : "var(--clr-primary-5)";
-  // };
+  const colorFunction = () => "var(--clr-primary-3)";
 
-  // const custom = {
-  //   colorFunction,
-  // };
+  const labelFunction = (d) => {
+    return `${d.key} ${d.key == 1 ? d.category.slice(0, -1) : d.category}`;
+  };
+
+  // {tooltipDatum.value <= 5 ? "It's not so nice" : "It's nice"} to own {tooltipDatum.key} {tooltipDatum.key == 1 ? tooltipDatum.category.slice(0, -1) : tooltipDatum.category}
+
+  const custom = {
+    ariaLabel: "Number of pets VS levels of happiness",
+    colorFunction,
+    labelFunction,
+  };
 
   //// Configuration
   const config = {
     ...scatterplotConfig,
     data: newData,
-    //// uncomment if you don't need any custom function
-    // custom,
+    // xDomain: [0, 10],  // uncomment if you need to set a custom domain
+    // xPadding: [10, 10] // This is useful for adding extra space to a scatter plot so that your circles don't interfere with your y-axis. It's better than fussing with the range since you don't need to add a magic number to other components, like axes
+    custom,
   };
 
   // console.log(scatterplotConfig);
@@ -43,7 +47,7 @@
   <LayerCake {...config} debug={false}>
     <AxisX ticks={10} gridlines={true} />
     <AxisY gridlines={false} />
-    <Scatterplot />
+    <Scatterplot labels={false} />
   </LayerCake>
 </div>
 

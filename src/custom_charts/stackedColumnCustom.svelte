@@ -1,6 +1,6 @@
 <script>
   import { LayerCake } from "layercake";
-  import { stackedColumnConfig } from "../config_charts/stackedColumnConfig";
+  import { stackedColumnConfig } from "../default_charts/stackedColumnConfig";
 
   import AxisX from "../graphics/axisX.svelte";
   import AxisY from "../graphics/axisY.svelte";
@@ -21,11 +21,25 @@
     return d.category === newData[0].category
       ? "var(--clr-primary-3)"
       : d.category === newData[1].category
-        ? "var(--clr-primary-8)"
-        : "var(--clr-grey-10)";
+        ? "var(--clr-primary-10)"
+        : "var(--clr-primary-8)";
   };
+
+  const labelFunction = (d, key, data) => {
+    // Add console.log to debug the values we receive
+    console.log("Debug:", { value: d, key: key, data: data });
+    // Only show label if value is not 0
+    if (d === 0) return "";
+    // Handle plural form
+    const doseText = d === 1 ? "dose" : "doses";
+    // Return the formatted string with the coffee name
+    return `${d} ${doseText}`;
+  };
+
   const custom = {
+    ariaLabel: "Espresso, Steamed Milk, Milk foam ratios in different coffees",
     colorFunction,
+    labelFunction,
   };
 
   const config = {
@@ -35,21 +49,19 @@
     xDomain: newData.map((d) => d.key), // This preserves original order
     custom,
   };
-
-
 </script>
 
 <h2>The stacked column chart</h2>
 <p>
   <span class="category1">Espresso</span>
   <span class="category2">Steamed Milk</span>
-  <span class="category3">Milk foam</span> ratios in different coffees
+  <span class="category3">Milk foam</span> doses in different coffees
 </p>
 <div class="chart-container">
   <LayerCake {...config} debug={false}>
     <AxisX />
     <AxisY />
-    <StackedColumn labels={false} />
+    <StackedColumn />
   </LayerCake>
 </div>
 
@@ -78,6 +90,6 @@
   }
 
   .category3 {
-    background-color: var(--clr-grey-10);
+    background-color: var(--clr-primary-10);
   }
 </style>
