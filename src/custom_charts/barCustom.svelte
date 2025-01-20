@@ -29,6 +29,7 @@
     ariaLabel: "Number of toes per animal",
     colorFunction,
     labelFunction,
+    tooltipId:"barid"
   };
 
   //// Configuration
@@ -41,6 +42,7 @@
     custom,
   };
 </script>
+
 
 <h2>The bar chart</h2>
 <p>→ Number of toes per animal</p>

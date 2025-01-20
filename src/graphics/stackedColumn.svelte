@@ -3,6 +3,7 @@
   import { Svg, uniques } from "layercake";
   import { stack } from "d3-shape";
   import { index } from "d3-array";
+  import { tooltipDatum } from "../stores/tooltipStore.js";
 
   const { data, xScale, yScale, width, height, custom } =
     getContext("LayerCake");

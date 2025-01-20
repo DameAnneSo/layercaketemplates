@@ -6,7 +6,7 @@ export const mousePosition = readable({x:0, y:0}, (set) => {
 	document.body.addEventListener("mousemove", move);
 	
 	function move(event) {
-		set({
+		set({	
 			x: event.clientX,
 			y: event.clientY + window.scrollY,
 		});

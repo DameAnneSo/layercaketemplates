@@ -20,13 +20,13 @@
   const labelFunction = (d) => {
     return `${d.key} ${d.key == 1 ? d.category.slice(0, -1) : d.category}`;
   };
-
   // {tooltipDatum.value <= 5 ? "It's not so nice" : "It's nice"} to own {tooltipDatum.key} {tooltipDatum.key == 1 ? tooltipDatum.category.slice(0, -1) : tooltipDatum.category}
 
   const custom = {
     ariaLabel: "Number of pets VS levels of happiness",
     colorFunction,
     labelFunction,
+    tooltipId:"randomid"
   };
 
   //// Configuration

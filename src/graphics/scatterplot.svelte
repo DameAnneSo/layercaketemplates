@@ -23,7 +23,10 @@
         cy={$yGet(d)}
         r="5"
         fill={$custom.colorFunction(d)}
-        on:mouseover={() => ($tooltipDatum = d)}
+        on:mouseover={() => {
+          $tooltipDatum = d;
+          $tooltipDatum.id = $custom.tooltipId;
+        }}
         on:mouseout={() => ($tooltipDatum = undefined)}
         on:focus={() => ($tooltipDatum = d)}
         on:blur={() => ($tooltipDatum = undefined)}

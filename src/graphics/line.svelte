@@ -1,52 +1,59 @@
 <script>
-  import { getContext } from 'svelte'
-  import { Svg, uniques } from 'layercake'
-  import { line, curveLinear} from 'd3-shape'
+  import { getContext } from "svelte";
+  import { Svg, uniques } from "layercake";
+  import { line, curveLinear } from "d3-shape";
+  import { tooltipDatum } from "../stores/tooltipStore.js";
 
-  const { data, xGet, yGet, width, height, custom } = getContext('LayerCake')
+  const { data, xGet, yGet, width, height, custom } = getContext("LayerCake");
 
   // start with empty array
-  let lineData = []
+  let lineData = [];
 
   // get data
   const lineGenerator = line()
-    .x(d => $xGet(d))
-    .y(d => $yGet(d))
-    .curve($custom.curve ? $custom.curve : curveLinear)
-    // .curve(curveStep)
+    .x((d) => $xGet(d))
+    .y((d) => $yGet(d))
+    .curve($custom.curve ? $custom.curve : curveLinear);
+  // .curve(curveStep)
 
-  // raw data to transformed data 
+  // raw data to transformed data
   const renderPath = () => {
-    const categories = uniques($data.map(d => d.category))
-    lineData = categories.map(category => {
-      const path = lineGenerator($data.filter(d => d.category === category))
-      return { path, category }
-    })
+    const categories = uniques($data.map((d) => d.category));
+    lineData = categories.map((category) => {
+      const path = lineGenerator($data.filter((d) => d.category === category));
+      return { path, category };
+    });
     // console.log(categories)
     // console.log(lineData)
-  }
+  };
 
   export let labels = true;
 
-  //each time data, width or height change, recalculate the path 
-  $: $data, $width, $height, renderPath()
+  //each time data, width or height change, recalculate the path
+  $: $data, $width, $height, renderPath();
 </script>
 
 <Svg label={$custom.ariaLabel}>
   {#each lineData as lineDatum}
-    <path d={lineDatum.path} stroke={$custom.colorFunction(lineDatum)} />{/each}
-  
+    <path
+      d={lineDatum.path}
+      stroke={$custom.colorFunction(lineDatum)}
+      on:mouseover={() => ($tooltipDatum = lineDatum)}
+      on:mouseout={() => ($tooltipDatum = undefined)}
+      on:focus={() => ($tooltipDatum = lineDatum)}
+      on:blur={() => ($tooltipDatum = undefined)}
+    />{/each}
+
   <g class="labels">
     {#if labels}
       {#each $data as d}
-        <text class="label" x={$xGet(d)} y={$yGet(d) -15} text-anchor="middle">
+        <text class="label" x={$xGet(d)} y={$yGet(d) - 15} text-anchor="middle">
           {$custom.labelFunction(d)}
         </text>
       {/each}
     {/if}
   </g>
-  </Svg>
-
+</Svg>
 
 <style>
   path {
@@ -60,4 +67,3 @@
     font-family: var(--ff-secondary);
   }
 </style>
-

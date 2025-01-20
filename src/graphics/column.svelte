@@ -1,6 +1,7 @@
 <script>
   import { getContext } from "svelte";
   import { Svg } from "layercake";
+  import { tooltipDatum } from "../stores/tooltipStore.js";
 
   const { data, xGet, yGet, xScale, yScale, custom } = getContext("LayerCake");
 
@@ -18,6 +19,10 @@
         height={$yScale(0) - $yGet(d)}
         width={$xScale.bandwidth()}
         fill={$custom.colorFunction(d)}
+        on:mouseover={() => ($tooltipDatum = d)}
+        on:mouseout={() => ($tooltipDatum = undefined)}
+        on:focus={() => ($tooltipDatum = d)}
+        on:blur={() => ($tooltipDatum = undefined)}
       />
     {/each}
   </g>

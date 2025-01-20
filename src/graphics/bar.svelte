@@ -1,11 +1,11 @@
 <script>
-  import { getContext} from "svelte";
+  import { getContext } from "svelte";
   import { Svg } from "layercake";
+  import { tooltipDatum } from "../stores/tooltipStore.js";
 
   const { data, xGet, yGet, xScale, yScale, custom } = getContext("LayerCake");
 
   export let labels = true;
-
 </script>
 
 <Svg label={$custom.ariaLabel}>
@@ -19,6 +19,13 @@
         height={$yScale.bandwidth()}
         width={$xGet(d)}
         fill={$custom.colorFunction(d)}
+        on:mouseover={() => {
+          $tooltipDatum = d;
+          $tooltipDatum.id = $custom.tooltipId;
+        }}
+        on:mouseout={() => ($tooltipDatum = undefined)}
+        on:focus={() => ($tooltipDatum = d)}
+        on:blur={() => ($tooltipDatum = undefined)}
       />
     {/each}
   </g>
@@ -32,7 +39,7 @@
           y={$yGet(d) + $yScale.bandwidth() / 2}
           alignment-baseline="middle"
         >
-         {$custom.labelFunction(d)}
+          {$custom.labelFunction(d)}
         </text>
       {/each}
     </g>

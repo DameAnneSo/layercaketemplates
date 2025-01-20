@@ -2,6 +2,7 @@
   import { getContext } from "svelte";
   import { Svg } from "layercake";
   import { step } from "../stores/commonStores.js";
+  import { tooltipDatum } from "../stores/tooltipStore.js";
   const { data, xGet, yGet, xScale, yScale, custom } = getContext("LayerCake");
 
   function getFillColor(index, $step) {
