@@ -21,12 +21,12 @@
     const keys = uniques($data.map((d) => d.category));
     stackGenerator.keys(keys);
     stackedData = stackGenerator(indexedData);
-    // console.log(stackedData);
   };
 
   export let labels = true;
 
   $: $width, $height, $data, renderBars();
+  // $: console.log($tooltipDatum);
 </script>
 
 <Svg label={$custom.ariaLabel}>
@@ -39,24 +39,42 @@
         y={$yScale(categoryDatum.data[0])}
         height={$yScale.bandwidth()}
         fill={$custom.colorFunction({ category: categoryData.key })}
+        on:mouseover={() => {
+          $tooltipDatum = {
+            ...categoryDatum,
+            key: categoryData.key,
+            id: $custom.tooltipId,
+          };
+          $tooltipDatum.id = $custom.tooltipId;
+        }}
+        on:mouseout={() => ($tooltipDatum = undefined)}
+        on:focus={() => {
+          $tooltipDatum = {
+            ...categoryDatum,
+            key: categoryData.key,
+            id: $custom.tooltipId,
+          };
+          $tooltipDatum.id = $custom.tooltipId;
+        }}
+        on:blur={() => ($tooltipDatum = undefined)}
       />
 
       {#if labels}
         <g class="labels">
-            <text
+          <text
             class="label"
             x={$xScale(categoryDatum[0]) +
               ($xScale(categoryDatum[1]) - $xScale(categoryDatum[0])) / 2}
             y={$yScale(categoryDatum.data[0]) + $yScale.bandwidth() / 2}
             alignment-baseline="middle"
             text-anchor="middle"
-            >
+          >
             {$custom.labelFunction(
               categoryDatum[1] - categoryDatum[0],
               categoryData.key,
               categoryDatum.data
             )}
-            </text>
+          </text>
         </g>
       {/if}
     {/each}

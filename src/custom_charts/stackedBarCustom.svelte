@@ -6,7 +6,7 @@
   import AxisY from "../graphics/axisY.svelte";
   import StackedBar from "../graphics/stackedBar.svelte";
   import dataRaw from "../data/stacked_data.csv";
-
+  import Tooltip from "../components/tooltip.svelte";
   const newData = dataRaw.map((d) => ({
     key: d.key,
     value: +d.value,
@@ -26,18 +26,25 @@
   };
 
   const labelFunction = (d, key, data) => {
-  // Only show label if value is not 0
-  if (d === 0) return '';
-  // Handle plural form
-  const doseText = d === 1 ? 'dose' : 'doses';
-  // Return the formatted string with the coffee name
-  return `${d} ${doseText}`;
+    // Only show label if value is not 0
+    if (d === 0) return "";
+    // Handle plural form
+    const doseText = d === 1 ? "dose" : "doses";
+    // Return the formatted string with the coffee name
+    return `${d} ${doseText}`;
+  };
+
+const tooltipFunction = (d, key, data) => {
+  const doseText = d === 1 ? "dose" : "doses";
+  return `${data[0]}: ${data[1].get(key).value} ${doseText} of ${key}`;
 };
 
   const custom = {
     ariaLabel: "Espresso, Steamed Milk, Milk foam ratios in different coffees",
     colorFunction,
     labelFunction,
+    tooltipFunction,
+    tooltipId: "stackedBarId",
   };
 
   const config = {
@@ -45,11 +52,20 @@
     padding: { top: 20, right: 20, bottom: 20, left: 50 },
     data: newData,
     xDomain: [0, MaxDomain],
-    yDomain: newData.map((d) => d.key), // This preserves original order
+    yDomain: newData.map((d) => d.key), // This pretipserves original order
     custom,
   };
 </script>
 
+<Tooltip tooltipId={"stackedBarId"} let:tooltipDatum>
+  <p>
+   {tooltipFunction(
+        tooltipDatum.data[1].get(tooltipDatum.key).value, 
+        tooltipDatum.key, 
+        tooltipDatum.data
+   )}
+  </p>
+</Tooltip>
 <h2>The stacked bar chart</h2>
 <p>
   <span class="category1">Espresso</span>

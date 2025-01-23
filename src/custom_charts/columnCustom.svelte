@@ -1,14 +1,12 @@
 <script>
   import { LayerCake } from "layercake";
   import { columnConfig } from "../default_charts/columnConfig.js";
-
   import AxisX from "../graphics/axisX.svelte";
   import AxisY from "../graphics/axisY.svelte";
   import Column from "../graphics/column.svelte";
-
   import { scaleBand } from "d3-scale";
-
   import dataRaw from "../data/bar_data.csv";
+  import Tooltip from "../components/tooltip.svelte";
 
   const newData = dataRaw.map((d) => ({
     index: +d.index,
@@ -20,8 +18,8 @@
   //// Custom functions
   const colorFunction = (d) => {
     return d.category === newData[0].category
-      ? "var(--clr-primary-3)"
-      : "var(--clr-primary-8)";
+      ? "var(--clr-primary-8)"
+      : "var(--clr-primary-3)";
   };
 
   const labelFunction = (d) => {
@@ -32,6 +30,7 @@
     ariaLabel: "Number of toes per animal",
     colorFunction,
     labelFunction,
+    tooltipId: "columnId",
   };
 
   //// (Optional) Configuration
@@ -44,6 +43,11 @@
   };
 </script>
 
+<Tooltip tooltipId={"columnId"} let:tooltipDatum>
+  <p>
+    a {tooltipDatum.key}{tooltipDatum.category === 'cat' ? ', my favourite animal,' : ''} has {tooltipDatum.value} {tooltipDatum.value === 1 ? 'toe' : 'toes'}
+  </p>
+</Tooltip>
 <h2>The column chart</h2>
 <p>↑ Number of toes per animal</p>
 <div class="chart-container">

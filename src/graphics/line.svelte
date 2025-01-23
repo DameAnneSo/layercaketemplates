@@ -38,9 +38,21 @@
     <path
       d={lineDatum.path}
       stroke={$custom.colorFunction(lineDatum)}
-      on:mouseover={() => ($tooltipDatum = lineDatum)}
+      on:mouseover={() => {
+        const relatedData = $data.filter(
+          (d) => d.category === lineDatum.category
+        );
+        $tooltipDatum = relatedData[relatedData.length - 1];
+        $tooltipDatum.id = $custom.tooltipId;
+      }}
       on:mouseout={() => ($tooltipDatum = undefined)}
-      on:focus={() => ($tooltipDatum = lineDatum)}
+      on:focus={() => {
+        const relatedData = $data.filter(
+          (d) => d.category === lineDatum.category
+        );
+        $tooltipDatum = relatedData[relatedData.length - 1];
+        $tooltipDatum.id = $custom.tooltipId;
+      }}
       on:blur={() => ($tooltipDatum = undefined)}
     />{/each}
 

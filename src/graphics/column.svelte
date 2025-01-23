@@ -19,9 +19,15 @@
         height={$yScale(0) - $yGet(d)}
         width={$xScale.bandwidth()}
         fill={$custom.colorFunction(d)}
-        on:mouseover={() => ($tooltipDatum = d)}
+        on:mouseover={() => {
+          $tooltipDatum = d;
+          $tooltipDatum.id = $custom.tooltipId;
+        }}
         on:mouseout={() => ($tooltipDatum = undefined)}
-        on:focus={() => ($tooltipDatum = d)}
+        on:focus={() => {
+          $tooltipDatum = d;
+          $tooltipDatum.id = $custom.tooltipId;
+        }}
         on:blur={() => ($tooltipDatum = undefined)}
       />
     {/each}

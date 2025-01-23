@@ -5,8 +5,9 @@
   import AxisY from "../graphics/axisY.svelte";
   import Bar from "../graphics/bar.svelte";
   import { scaleBand } from "d3-scale";
-
   import dataRaw from "../data/bar_data.csv";
+  import Tooltip from "../components/tooltip.svelte";
+
   const newData = dataRaw.map((d) => ({
     index: +d.index,
     key: d.key,
@@ -16,9 +17,9 @@
 
   //// (Optional) Custom functions
   const colorFunction = (d) => {
-    return d.category === barConfig.data[0].category
-      ? "var(--clr-primary-3)"
-      : "var(--clr-primary-8)";
+    return d.category === newData[0].category
+      ? "var(--clr-primary-8)"
+      : "var(--clr-primary-3)";
   };
 
   const labelFunction = (d) => {
@@ -29,7 +30,7 @@
     ariaLabel: "Number of toes per animal",
     colorFunction,
     labelFunction,
-    tooltipId:"barid"
+    tooltipId: "barId",
   };
 
   //// Configuration
@@ -43,6 +44,11 @@
   };
 </script>
 
+<Tooltip tooltipId={"barId"} let:tooltipDatum>
+  <p>
+    a {tooltipDatum.key}{tooltipDatum.category === 'cat' ? ', my favourite animal,' : ''} has {tooltipDatum.value} {tooltipDatum.value === 1 ? 'toe' : 'toes'}
+  </p>
+</Tooltip>
 
 <h2>The bar chart</h2>
 <p>→ Number of toes per animal</p>

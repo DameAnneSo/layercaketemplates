@@ -15,6 +15,7 @@ const labelFunction = (d) => d.key;
 const custom = {
   colorFunction,
   labelFunction,
+  
 };
 
 export const barConfig = {
@@ -23,4 +24,5 @@ export const barConfig = {
   y: "key",
   xDomain: [0, null], // null because there is will be a  calculated value for the maxDomain not to overflow
   padding,
+  custom,
 };

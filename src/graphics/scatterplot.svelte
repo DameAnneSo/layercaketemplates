@@ -28,7 +28,10 @@
           $tooltipDatum.id = $custom.tooltipId;
         }}
         on:mouseout={() => ($tooltipDatum = undefined)}
-        on:focus={() => ($tooltipDatum = d)}
+        on:focus={() => {
+          $tooltipDatum = d;
+          $tooltipDatum.id = $custom.tooltipId;
+        }}
         on:blur={() => ($tooltipDatum = undefined)}
       ></circle>
     {/each}

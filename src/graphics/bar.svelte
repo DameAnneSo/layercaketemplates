@@ -6,6 +6,15 @@
   const { data, xGet, yGet, xScale, yScale, custom } = getContext("LayerCake");
 
   export let labels = true;
+
+  export let labelsIn = true;
+
+  // function getLabelX(d) {
+  //   return labelsIn ? $xGet(d) + 5 : $xGet(d) - 5;
+  // }
+  // function getTextAnchor() {
+  //   return labelsIn ? "start" : "end";
+  // }
 </script>
 
 <Svg label={$custom.ariaLabel}>
@@ -24,7 +33,10 @@
           $tooltipDatum.id = $custom.tooltipId;
         }}
         on:mouseout={() => ($tooltipDatum = undefined)}
-        on:focus={() => ($tooltipDatum = d)}
+        on:focus={() => {
+          $tooltipDatum = d;
+          $tooltipDatum.id = $custom.tooltipId;
+        }}
         on:blur={() => ($tooltipDatum = undefined)}
       />
     {/each}
@@ -38,6 +50,7 @@
           x={$xGet(d) + 5}
           y={$yGet(d) + $yScale.bandwidth() / 2}
           alignment-baseline="middle"
+          text-anchor="start"
         >
           {$custom.labelFunction(d)}
         </text>

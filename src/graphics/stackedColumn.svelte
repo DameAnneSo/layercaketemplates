@@ -38,6 +38,24 @@
         height={$yScale(categoryDatum[0]) - $yScale(categoryDatum[1])}
         width={$xScale.bandwidth()}
         fill={$custom.colorFunction({ category: categoryData.key })}
+        on:mouseover={() => {
+          $tooltipDatum = {
+            ...categoryDatum,
+            key: categoryData.key,
+            id: $custom.tooltipId,
+          };
+          $tooltipDatum.id = $custom.tooltipId;
+        }}
+        on:mouseout={() => ($tooltipDatum = undefined)}
+        on:focus={() => {
+          $tooltipDatum = {
+            ...categoryDatum,
+            key: categoryData.key,
+            id: $custom.tooltipId,
+          };
+          $tooltipDatum.id = $custom.tooltipId;
+        }}
+        on:blur={() => ($tooltipDatum = undefined)}
       />
     {/each}
 
@@ -47,10 +65,11 @@
           <text
             class="label"
             x={$xScale(categoryDatum.data[0]) + $xScale.bandwidth() / 2}
-            y={$yScale(categoryDatum[1]) + ($yScale(categoryDatum[0]) - $yScale(categoryDatum[1])) / 2}
+            y={$yScale(categoryDatum[1]) +
+              ($yScale(categoryDatum[0]) - $yScale(categoryDatum[1])) / 2}
             text-anchor="middle"
           >
-           {$custom.labelFunction(
+            {$custom.labelFunction(
               categoryDatum[1] - categoryDatum[0],
               categoryData.key,
               categoryDatum.data
@@ -69,5 +88,3 @@
     font-family: var(--ff-secondary);
   }
 </style>
-
-

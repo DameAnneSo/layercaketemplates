@@ -23,4 +23,5 @@ export const columnConfig = {
   y: "value",
   yDomain: [0, null], // null because there is will be a  calculated value for the maxDomain not to overflow
   padding,
+  custom,
 };

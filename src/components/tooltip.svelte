@@ -1,7 +1,7 @@
 <script>
   import { mousePosition, tooltipDatum } from "../stores/tooltipStore.js";
   export let tooltipId;
-  console.log(tooltipId);
+  // console.log(tooltipId);
 </script>
 
 {#if $tooltipDatum && tooltipId === $tooltipDatum.id}

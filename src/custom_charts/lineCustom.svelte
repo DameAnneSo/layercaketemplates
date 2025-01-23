@@ -2,12 +2,11 @@
   import { LayerCake } from "layercake";
   import { lineConfig } from "../default_charts/lineConfig.js";
   import { curveStep } from "d3-shape";
-
   import AxisX from "../graphics/axisX.svelte";
   import AxisY from "../graphics/axisY.svelte";
   import Line from "../graphics/line.svelte";
-
   import dataRaw from "../data/line_data.csv";
+  import Tooltip from "../components/tooltip.svelte";
 
   const newData = dataRaw.map((d) => ({
     key: +d.key,
@@ -25,8 +24,8 @@
   const labelFunction = (d) => {
     return d.key === newData[newData.length - 1].key
       ? d.category === newData[0].category
-      ? newData[0].category
-      : newData.find(item => item.category !== newData[0].category).category
+        ? newData[0].category
+        : newData.find((item) => item.category !== newData[0].category).category
       : "";
   };
 
@@ -36,6 +35,7 @@
       "Time spent learning dataviz VS levels of confidence I'll be able to pull a line chart",
     colorFunction,
     labelFunction,
+    tooltipId: "lineId",
   };
 
   //// Configuration
@@ -46,6 +46,11 @@
   };
 </script>
 
+<Tooltip tooltipId={"lineId"} let:tooltipDatum>
+  <p>
+    at stage {tooltipDatum.key}, my {tooltipDatum.category} was {tooltipDatum.value}/10 of proficiency
+  </p>
+</Tooltip>
 <h2>The line chart</h2>
 <p>
   → Time spent learning dataviz VS ↑ levels of confidence I'll be able to pull a
