@@ -3,18 +3,15 @@
   import { Svg } from "layercake";
   import { tooltipDatum } from "../stores/tooltipStore.js";
 
-  const { data, xGet, yGet, xScale, yScale, custom } = getContext("LayerCake");
+  const { data, xGet, yGet, xScale, yScale, custom, width, height } =
+    getContext("LayerCake");
 
   export let labels = true;
+  export let labelsOut = true;
 
-  export let labelsIn = true;
-
-  // function getLabelX(d) {
-  //   return labelsIn ? $xGet(d) + 5 : $xGet(d) - 5;
-  // }
-  // function getTextAnchor() {
-  //   return labelsIn ? "start" : "end";
-  // }
+  $: getLabelX = (d) => (labelsOut ? $xGet(d) + 5 : $xGet(d) - 5);
+  $: getTextAnchor = (d) => (labelsOut ? "start" : "end")
+  
 </script>
 
 <Svg label={$custom.ariaLabel}>
@@ -47,10 +44,10 @@
       {#each $data as d, i}
         <text
           class="label"
-          x={$xGet(d) + 5}
+          x={getLabelX(d)}
           y={$yGet(d) + $yScale.bandwidth() / 2}
           alignment-baseline="middle"
-          text-anchor="start"
+          text-anchor={getTextAnchor()}
         >
           {$custom.labelFunction(d)}
         </text>

@@ -31,16 +31,16 @@
 </Html>
 
 <style>
-  .layercake-annotation {
-    position: absolute;
-  }
+
 
 .layercake-annotation  
 {
+ position: absolute;
   font-size: 0.8rem;
   padding: 0.25rem 0.5rem;
   text-align: center;
   font-style: italic;
   color: var(--clr-primary-2);
+  pointer-events:all;
 }
 </style>

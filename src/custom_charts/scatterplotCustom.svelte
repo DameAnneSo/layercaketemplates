@@ -6,7 +6,8 @@
   import AxisY from "../graphics/axisY.svelte";
   import dataRaw from "../data/scatterplot_data.csv";
   import Tooltip from "../components/tooltip.svelte";
-  import Annotations from "../graphics/annotation_scatterplot.svelte";
+  import Annotations from "../graphics/annotations.svelte";
+  import Arrows from "../graphics/arrows.svelte";
 
   const newData = dataRaw.map((d) => ({
     index: +d.index,
@@ -75,6 +76,7 @@
     <AxisY gridlines={false} />
     <Scatterplot labels={false} />
     <Annotations {annotations} />
+    <!-- <Arrows {annotations} /> -->
   </LayerCake>
 </div>
 
