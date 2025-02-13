@@ -24,8 +24,26 @@
       text: "Dream scenario",
       [xKey]: "6",
       [yKey]: 10,
-      dx: -15, // Optional pixel values
+      dx: -45, // Optional pixel values
       dy: 15,
+      arrows: [
+        {
+          clockwise: true, // true or false, defaults to true
+          source: {
+            anchor: 'left-bottom', // can be `{left, middle, right},{top-middle-bottom}`
+            dx:10,
+            dy: -20
+          },
+          target: {
+            // These can be expressed in our data units if passed under the data keys
+            [xKey]: '6',
+            [yKey]: 10,
+            // Optional adjustments
+            dx: -10,
+            dy: 0
+          }
+        }
+      ]
     },
   ];
   newData.forEach((d) => {
@@ -76,7 +94,7 @@
     <AxisY gridlines={false} />
     <Scatterplot labels={false} />
     <Annotations {annotations} />
-    <!-- <Arrows {annotations} /> -->
+    <Arrows {annotations} />
   </LayerCake>
 </div>
 
