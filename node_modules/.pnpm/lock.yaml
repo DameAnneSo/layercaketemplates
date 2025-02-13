@@ -13,13 +13,16 @@ importers:
         version: 3.0.2(rollup@3.29.4)
       '@sveltejs/vite-plugin-svelte':
         specifier: ^2.0.3
-        version: 2.4.6(svelte@3.59.2)(vite@4.4.11)
+        version: 2.4.6(svelte@3.59.2)(vite@4.4.11(terser@5.21.0))
       d3-array:
         specifier: ^3.2.4
         version: 3.2.4
       d3-axis:
         specifier: ^3.0.0
         version: 3.0.0
+      d3-quadtree:
+        specifier: ^3.0.1
+        version: 3.0.1
       d3-scale:
         specifier: ^4.0.2
         version: 4.0.2
@@ -278,6 +281,10 @@ packages:
 
   d3-path@3.1.0:
     resolution: {integrity: sha512-p3KP5HCf/bvjBSSKuXid6Zqijx7wIfNW+J/maPs+iwR35at5JCbLUT0LzF1cnjbCHWhqzQTIN2Jpe8pRebIEFQ==}
+    engines: {node: '>=12'}
+
+  d3-quadtree@3.0.1:
+    resolution: {integrity: sha512-04xDrxQTDTCFwP5H6hRhsRcb9xxv2RzkcsygFzmkSIOJy3PeRJP7sNk3VRIbKXcog561P9oU0/rVH6vDROAgUw==}
     engines: {node: '>=12'}
 
   d3-scale@4.0.2:
@@ -544,28 +551,30 @@ snapshots:
       '@rollup/pluginutils': 5.0.5(rollup@3.29.4)
       '@types/d3-dsv': 3.0.4
       d3-dsv: 2.0.0
-      rollup: 3.29.4
       tosource: 2.0.0-alpha.3
+    optionalDependencies:
+      rollup: 3.29.4
 
   '@rollup/pluginutils@5.0.5(rollup@3.29.4)':
     dependencies:
       '@types/estree': 1.0.2
       estree-walker: 2.0.2
       picomatch: 2.3.1
+    optionalDependencies:
       rollup: 3.29.4
 
-  '@sveltejs/vite-plugin-svelte-inspector@1.0.4(@sveltejs/vite-plugin-svelte@2.4.6)(svelte@3.59.2)(vite@4.4.11)':
+  '@sveltejs/vite-plugin-svelte-inspector@1.0.4(@sveltejs/vite-plugin-svelte@2.4.6(svelte@3.59.2)(vite@4.4.11(terser@5.21.0)))(svelte@3.59.2)(vite@4.4.11(terser@5.21.0))':
     dependencies:
-      '@sveltejs/vite-plugin-svelte': 2.4.6(svelte@3.59.2)(vite@4.4.11)
+      '@sveltejs/vite-plugin-svelte': 2.4.6(svelte@3.59.2)(vite@4.4.11(terser@5.21.0))
       debug: 4.3.4
       svelte: 3.59.2
       vite: 4.4.11(terser@5.21.0)
     transitivePeerDependencies:
       - supports-color
 
-  '@sveltejs/vite-plugin-svelte@2.4.6(svelte@3.59.2)(vite@4.4.11)':
+  '@sveltejs/vite-plugin-svelte@2.4.6(svelte@3.59.2)(vite@4.4.11(terser@5.21.0))':
     dependencies:
-      '@sveltejs/vite-plugin-svelte-inspector': 1.0.4(@sveltejs/vite-plugin-svelte@2.4.6)(svelte@3.59.2)(vite@4.4.11)
+      '@sveltejs/vite-plugin-svelte-inspector': 1.0.4(@sveltejs/vite-plugin-svelte@2.4.6(svelte@3.59.2)(vite@4.4.11(terser@5.21.0)))(svelte@3.59.2)(vite@4.4.11(terser@5.21.0))
       debug: 4.3.4
       deepmerge: 4.3.1
       kleur: 4.1.5
@@ -573,7 +582,7 @@ snapshots:
       svelte: 3.59.2
       svelte-hmr: 0.15.3(svelte@3.59.2)
       vite: 4.4.11(terser@5.21.0)
-      vitefu: 0.2.4(vite@4.4.11)
+      vitefu: 0.2.4(vite@4.4.11(terser@5.21.0))
     transitivePeerDependencies:
       - supports-color
 
@@ -608,6 +617,8 @@ snapshots:
       d3-color: 3.1.0
 
   d3-path@3.1.0: {}
+
+  d3-quadtree@3.0.1: {}
 
   d3-scale@4.0.2:
     dependencies:
@@ -741,10 +752,10 @@ snapshots:
       esbuild: 0.18.20
       postcss: 8.4.31
       rollup: 3.29.4
-      terser: 5.21.0
     optionalDependencies:
       fsevents: 2.3.3
+      terser: 5.21.0
 
-  vitefu@0.2.4(vite@4.4.11):
-    dependencies:
+  vitefu@0.2.4(vite@4.4.11(terser@5.21.0)):
+    optionalDependencies:
       vite: 4.4.11(terser@5.21.0)

@@ -38,7 +38,6 @@
     const value = tooltipDatum.data[1].get(tooltipDatum.key).value;
     const key = tooltipDatum.key;
     const data = tooltipDatum.data;
-
     const doseText = value === 1 ? "dose" : "doses";
     return `${data[0]}: ${value} ${doseText} of ${key}`;
   };

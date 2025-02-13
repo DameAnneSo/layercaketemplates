@@ -6,7 +6,9 @@
   import AxisY from "../graphics/axisY.svelte";
   import Line from "../graphics/line.svelte";
   import dataRaw from "../data/line_data.csv";
-  import Tooltip from "../components/tooltip.svelte";
+  // import Tooltip from "../components/tooltip.svelte";
+  import SharedTooltip from "../components/SharedTooltip.svelte";
+  import Labels from '../components/groupLabels.html.svelte';
 
   const newData = dataRaw.map((d) => ({
     key: +d.key,
@@ -46,11 +48,15 @@
   };
 </script>
 
-<Tooltip tooltipId={"lineId"} let:tooltipDatum>
+
+ <!-- <Labels />
+<SharedTooltip tooltipId={"lineId"} let:tooltipDatum>
   <p>
-    at stage {tooltipDatum.key}, my {tooltipDatum.category} was {tooltipDatum.value}/10 of proficiency
+    at stage {tooltipDatum.key}, my {tooltipDatum.category} was {tooltipDatum.value}/10
+    of proficiency
   </p>
-</Tooltip>
+</SharedTooltip> -->
+
 <h2>The line chart</h2>
 <p>
   → Time spent learning dataviz VS ↑ levels of confidence I'll be able to pull a

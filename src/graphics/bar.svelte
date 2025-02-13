@@ -7,10 +7,10 @@
     getContext("LayerCake");
 
   export let labels = true;
-  export let labelsOut = true;
+  export let labelsOut = false;
 
-  $: getLabelX = (d) => (labelsOut ? $xGet(d) + 5 : $xGet(d) - 5);
-  $: getTextAnchor = (d) => (labelsOut ? "start" : "end")
+$: getLabelX = (d) => ($custom.labelPositionFunction(d) ? $xGet(d) + 5 : $xGet(d) - 5);
+$: getTextAnchor = (d) => ($custom.labelPositionFunction(d) ? "start" : "end");
   
 </script>
 
@@ -47,7 +47,7 @@
           x={getLabelX(d)}
           y={$yGet(d) + $yScale.bandwidth() / 2}
           alignment-baseline="middle"
-          text-anchor={getTextAnchor()}
+          text-anchor={getTextAnchor(d)}
         >
           {$custom.labelFunction(d)}
         </text>

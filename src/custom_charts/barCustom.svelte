@@ -26,10 +26,15 @@
     return d.value === 1 ? d.value + " toe" : d.value + " toes";
   };
 
+  const labelPositionFunction = (d) => {
+  return d.value < 3;
+};
+
   const custom = {
     ariaLabel: "Number of toes per animal",
     colorFunction,
     labelFunction,
+    labelPositionFunction,
     tooltipId: "barId",
   };
 
@@ -46,7 +51,10 @@
 
 <Tooltip tooltipId={"barId"} let:tooltipDatum>
   <p>
-    a {tooltipDatum.key}{tooltipDatum.category === 'cat' ? ', my favourite animal,' : ''} has {tooltipDatum.value} {tooltipDatum.value === 1 ? 'toe' : 'toes'}
+    a {tooltipDatum.key}{tooltipDatum.category === "cat"
+      ? ", my favourite animal,"
+      : ""} has {tooltipDatum.value}
+    {tooltipDatum.value === 1 ? "toe" : "toes"}
   </p>
 </Tooltip>
 

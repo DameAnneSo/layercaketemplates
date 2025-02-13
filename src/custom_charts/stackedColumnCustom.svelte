@@ -34,9 +34,12 @@
     return `${d} ${doseText}`;
   };
 
-  const tooltipFunction = (d, key, data) => {
-    const doseText = d === 1 ? "dose" : "doses";
-    return `${data[0]}: ${data[1].get(key).value} ${doseText} of ${key}`;
+  const tooltipFunction = (tooltipDatum) => {
+    const value = tooltipDatum.data[1].get(tooltipDatum.key).value;
+    const key = tooltipDatum.key;
+    const data = tooltipDatum.data;
+    const doseText = value === 1 ? "dose" : "doses";
+    return `${data[0]}: ${value} ${doseText} of ${key}`;
   };
 
   const custom = {
@@ -58,11 +61,7 @@
 
 <Tooltip tooltipId={"stackedColumnId"} let:tooltipDatum>
   <p>
-    {tooltipFunction(
-      tooltipDatum.data[1].get(tooltipDatum.key).value,
-      tooltipDatum.key,
-      tooltipDatum.data
-    )}
+    {tooltipFunction(tooltipDatum)}
   </p>
 </Tooltip>
 <h2>The stacked column chart</h2>
