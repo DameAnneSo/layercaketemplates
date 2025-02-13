@@ -7,7 +7,7 @@
     getContext("LayerCake");
 
   export let labels = true;
-  export let labelsOut = false;
+  // export let labelsOut = false;
 
 $: getLabelX = (d) => ($custom.labelPositionFunction(d) ? $xGet(d) + 5 : $xGet(d) - 5);
 $: getTextAnchor = (d) => ($custom.labelPositionFunction(d) ? "start" : "end");
