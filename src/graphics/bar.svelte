@@ -1,17 +1,17 @@
 <script>
-  import { getContext } from "svelte";
-  import { Svg } from "layercake";
-  import { tooltipDatum } from "../stores/tooltipStore.js";
+import { getContext } from "svelte";
+import { Svg } from "layercake";
+import { tooltipDatum } from "../stores/tooltipStore.js";
 
-  const { data, xGet, yGet, xScale, yScale, custom, width, height } =
-    getContext("LayerCake");
+const { data, xGet, yGet, xScale, yScale, custom, width, height } =
+  getContext("LayerCake");
 
-  export let labels = true;
-  // export let labelsOut = false;
+export let labels = true;
+// export let labelsOut = false;
 
-$: getLabelX = (d) => ($custom.labelPositionFunction(d) ? $xGet(d) + 5 : $xGet(d) - 5);
+$: getLabelX = (d) =>
+  $custom.labelPositionFunction(d) ? $xGet(d) + 5 : $xGet(d) - 5;
 $: getTextAnchor = (d) => ($custom.labelPositionFunction(d) ? "start" : "end");
-  
 </script>
 
 <Svg label={$custom.ariaLabel}>
@@ -25,6 +25,9 @@ $: getTextAnchor = (d) => ($custom.labelPositionFunction(d) ? "start" : "end");
         height={$yScale.bandwidth()}
         width={$xGet(d)}
         fill={$custom.colorFunction(d)}
+        tabindex="0"
+        role="button"
+        aria-label={`Data point: ${d.category} ${d.value}`}
         on:mouseover={() => {
           $tooltipDatum = d;
           $tooltipDatum.id = $custom.tooltipId;
@@ -57,9 +60,9 @@ $: getTextAnchor = (d) => ($custom.labelPositionFunction(d) ? "start" : "end");
 </Svg>
 
 <style>
-  .label {
-    fill: var(--clr-primary-5);
-    font-size: 0.8rem;
-    font-family: var(--ff-secondary);
-  }
+.label {
+  fill: var(--clr-primary-5);
+  font-size: 0.8rem;
+  font-family: var(--ff-secondary);
+}
 </style>

@@ -10,7 +10,7 @@
 
   import QuadTree from "./QuadTree.html.svelte";
 
-  const { data, width, yScale, config, Html } = getContext("LayerCake");
+  const { data, width, yScale, config, Html,xGet, yGet } = getContext("LayerCake");
 
   const commas = format(",");
   const titleCase = (d) => d.replace(/^\w/, (w) => w.toUpperCase());
@@ -33,57 +33,64 @@
   const w = 150;
   const w2 = w / 2;
 
-  /* --------------------------------------------
-   * Sort the keys by the highest value
-   */
-  function sortResult(result) {
-    if (Object.keys(result).length === 0) return [];
-    const rows = Object.keys(result)
-      .filter((d) => d !== $config.x)
-      .map((key) => {
-        return {
-          key,
-          value: result[key],
-        };
-      })
-      .sort((a, b) => b.value - a.value);
+  // We'll use this to track the tooltip position
+  let tooltipX = 0;
+  let tooltipY = 0;
 
-    return rows;
+  // Watch tooltipDatum to update tooltip position
+  $: if ($tooltipDatum && tooltipId === $tooltipDatum.id) {
+    tooltipX = $xGet($tooltipDatum);
+    tooltipY = $yGet($tooltipDatum);
   }
+
+  // Create rows for tooltip display
+  $: tooltipRows = $tooltipDatum ? [
+    {
+      key: $tooltipDatum.category,
+      value: $tooltipDatum.value
+    }
+  ] : [];
+  // /* --------------------------------------------
+  //  * Sort the keys by the highest value
+  //  */
+  // function sortResult(result) {
+  //   if (Object.keys(result).length === 0) return [];
+  //   const rows = Object.keys(result)
+  //     .filter((d) => d !== $config.x)
+  //     .map((key) => {
+  //       return {
+  //         key,
+  //         value: result[key],
+  //       };
+  //     })
+  //     .sort((a, b) => b.value - a.value);
+
+  //   return rows;
+  // }
 </script>
 
 <Html>
 {#if $tooltipDatum && tooltipId === $tooltipDatum.id}
-  <QuadTree
-    dataset={dataset || $data}
-    y="x"
-    let:x
-    let:y
-    let:visible
-    let:found
-    let:e
+  <div style="left:{tooltipX}px;" class="line"></div>
+  <div
+    class="tooltip"
+    style="
+    width:{w}px;
+    display: {$tooltipDatum ? 'block' : 'none'};
+    top:{tooltipY + offset}px;
+    left:{Math.min(Math.max(w2, tooltipX), $width - w2)}px;"
   >
-    {@const foundSorted = sortResult(found)}
-    {#if visible === true}
-      <div style="left:{x}px;" class="line"></div>
-      <div
-        class="tooltip"
-        style="
-        width:{w}px;
-        display: {visible ? 'block' : 'none'};
-        top:{$yScale(foundSorted[0].value) + offset}px;
-        left:{Math.min(Math.max(w2, x), $width - w2)}px;"
-      >
-        <div class="title">{formatTitle(found[$config.x])}</div>
-        {#each foundSorted as row}
-          <div class="row">
-            <span class="key">{formatKey(row.key)}:</span>
-            {formatValue(row.value)}
-          </div>
-        {/each}
+    <div class="title">{formatTitle($tooltipDatum.key)}</div>
+    {#each tooltipRows as row}
+      <div class="row">
+        <span class="key">{formatKey(row.key)}:</span>
+        {formatValue(row.value)}
       </div>
-    {/if}
-  </QuadTree>
+    {/each}
+  </div>
+
+  <!-- QuadTree is still useful for mousemove interactions but we're not using it for positioning -->
+
 {/if}
 </Html>
 <style>

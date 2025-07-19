@@ -77,7 +77,6 @@
   // Calculate the half of the band scale, which is used to center the tick marks and labels
   $: halfBand = isBandwidth ? $xScale.bandwidth() / 2 : 0;
 
-  // console.log(Array.isArray(ticks));
 </script>
 
 <Svg>

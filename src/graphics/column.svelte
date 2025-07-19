@@ -1,11 +1,11 @@
 <script>
-  import { getContext } from "svelte";
-  import { Svg } from "layercake";
-  import { tooltipDatum } from "../stores/tooltipStore.js";
+import { getContext } from "svelte";
+import { Svg } from "layercake";
+import { tooltipDatum } from "../stores/tooltipStore.js";
 
-  const { data, xGet, yGet, xScale, yScale, custom } = getContext("LayerCake");
+const { data, xGet, yGet, xScale, yScale, custom } = getContext("LayerCake");
 
-  export let labels = true;
+export let labels = true;
 </script>
 
 <Svg label={$custom.ariaLabel}>
@@ -19,6 +19,9 @@
         height={$yScale(0) - $yGet(d)}
         width={$xScale.bandwidth()}
         fill={$custom.colorFunction(d)}
+        tabindex="0"
+        role="button"
+        aria-label={`Data point: ${d.category} ${d.value}`}
         on:mouseover={() => {
           $tooltipDatum = d;
           $tooltipDatum.id = $custom.tooltipId;
@@ -50,9 +53,9 @@
 </Svg>
 
 <style>
-  .label {
-    fill: var(--clr-primary-5);
-    font-size: 0.8rem;
-    font-family: var(--ff-secondary);
-  }
+.label {
+  fill: var(--clr-primary-5);
+  font-size: 0.8rem;
+  font-family: var(--ff-secondary);
+}
 </style>

@@ -12,7 +12,7 @@
 
   import Footer from "./components/footer.svelte";
   import Thanks from "./components/thanks.svelte";
-  // $: console.log($mousePosition);
+ 
   // set year
   const date = new Date().getFullYear();
 </script>

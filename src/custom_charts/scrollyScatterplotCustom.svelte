@@ -38,7 +38,6 @@
     custom,
   };
 
-  // console.log(scatterplotConfig);
 </script>
 
 <div class="scrolly-column">

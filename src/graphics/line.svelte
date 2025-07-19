@@ -23,8 +23,7 @@
       const path = lineGenerator($data.filter((d) => d.category === category));
       return { path, category };
     });
-    // console.log(categories)
-    // console.log(lineData)
+
   };
 
   export let labels = true;

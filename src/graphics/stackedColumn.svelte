@@ -1,31 +1,30 @@
 <script>
-  import { getContext } from "svelte";
-  import { Svg, uniques } from "layercake";
-  import { stack } from "d3-shape";
-  import { index } from "d3-array";
-  import { tooltipDatum } from "../stores/tooltipStore.js";
+import { getContext } from "svelte";
+import { Svg, uniques } from "layercake";
+import { stack } from "d3-shape";
+import { index } from "d3-array";
+import { tooltipDatum } from "../stores/tooltipStore.js";
 
-  const { data, xScale, yScale, width, height, custom } =
-    getContext("LayerCake");
+const { data, xScale, yScale, width, height, custom } = getContext("LayerCake");
 
-  let stackedData = [];
+let stackedData = [];
 
-  const stackGenerator = stack().value(([, D], key) => D.get(key).value);
+const stackGenerator = stack().value(([, D], key) => D.get(key).value);
 
-  const renderBars = () => {
-    const indexedData = index(
-      $data,
-      (d) => d.key,
-      (d) => d.category
-    );
-    const keys = uniques($data.map((d) => d.category));
-    stackGenerator.keys(keys);
-    stackedData = stackGenerator(indexedData);
-    // console.log(stackedData)
-  };
-  export let labels = true;
+const renderBars = () => {
+  const indexedData = index(
+    $data,
+    (d) => d.key,
+    (d) => d.category
+  );
+  const keys = uniques($data.map((d) => d.category));
+  stackGenerator.keys(keys);
+  stackedData = stackGenerator(indexedData);
+  // console.log(stackedData)
+};
+export let labels = true;
 
-  $: $width, $height, $data, renderBars();
+$: $width, $height, $data, renderBars();
 </script>
 
 <Svg label={$custom.ariaLabel}>
@@ -82,9 +81,9 @@
 </Svg>
 
 <style>
-  .label {
-    fill: var(--clr-primary-5);
-    font-size: 0.8rem;
-    font-family: var(--ff-secondary);
-  }
+.label {
+  fill: var(--clr-primary-5);
+  font-size: 0.8rem;
+  font-family: var(--ff-secondary);
+}
 </style>

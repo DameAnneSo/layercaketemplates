@@ -6,9 +6,8 @@
   import AxisY from "../graphics/axisY.svelte";
   import Line from "../graphics/line.svelte";
   import dataRaw from "../data/line_data.csv";
-  // import Tooltip from "../components/tooltip.svelte";
+  import Tooltip from "../components/tooltip.svelte";
   import SharedTooltip from "../components/SharedTooltip.svelte";
-  import Labels from '../components/groupLabels.html.svelte';
 
   const newData = dataRaw.map((d) => ({
     key: +d.key,
@@ -49,13 +48,19 @@
 </script>
 
 
- <!-- <Labels />
-<SharedTooltip tooltipId={"lineId"} let:tooltipDatum>
+<!-- <SharedTooltip tooltipId={"lineId"} let:tooltipDatum>
   <p>
-    at stage {tooltipDatum.key}, my {tooltipDatum.category} was {tooltipDatum.value}/10
-    of proficiency
+    at stage {tooltipDatum ? tooltipDatum.key : ''}, 
+    my {tooltipDatum ? tooltipDatum.category : ''} was 
+    {tooltipDatum ? tooltipDatum.value : ''}/10 of proficiency
   </p>
 </SharedTooltip> -->
+
+<!-- <Tooltip tooltipId={"lineId"} let:tooltipDatum>
+  <p>
+    at stage {tooltipDatum.key}, my {tooltipDatum.category} was {tooltipDatum.value}/10 of proficiency
+  </p>
+</Tooltip> -->
 
 <h2>The line chart</h2>
 <p>

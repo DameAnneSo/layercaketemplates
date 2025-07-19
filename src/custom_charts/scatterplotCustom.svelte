@@ -1,81 +1,84 @@
 <script>
-  import { LayerCake } from "layercake";
-  import { scatterplotConfig } from "../default_charts/scatterplotConfig.js";
-  import Scatterplot from "../graphics/scatterplot.svelte";
-  import AxisX from "../graphics/axisX.svelte";
-  import AxisY from "../graphics/axisY.svelte";
-  import dataRaw from "../data/scatterplot_data.csv";
-  import Tooltip from "../components/tooltip.svelte";
-  import Annotations from "../graphics/annotations.svelte";
-  import Arrows from "../graphics/arrows.svelte";
+import { LayerCake } from "layercake";
+import { scatterplotConfig } from "../default_charts/scatterplotConfig.js";
+import Scatterplot from "../graphics/scatterplot.svelte";
+import AxisX from "../graphics/axisX.svelte";
+import AxisY from "../graphics/axisY.svelte";
+import dataRaw from "../data/scatterplot_data.csv";
+import Tooltip from "../components/tooltip.svelte";
+import Annotations from "../graphics/annotations.svelte";
+import Arrows from "../graphics/arrows.svelte";
 
-  const newData = dataRaw.map((d) => ({
-    index: +d.index,
-    key: d.key,
-    value: +d.value,
-    category: d.category,
-  }));
 
-  const xKey = "key";
-  const yKey = "value";
+const newData = dataRaw.map((d) => ({
+  index: +d.index,
+  key: d.key,
+  value: +d.value,
+  category: d.category,
+}));
 
-  const annotations = [
-    {
-      text: "Dream scenario",
-      [xKey]: "6",
-      [yKey]: 10,
-      dx: -45, // Optional pixel values
-      dy: 15,
-      arrows: [
-        {
-          clockwise: true, // true or false, defaults to true
-          source: {
-            anchor: 'left-bottom', // can be `{left, middle, right},{top-middle-bottom}`
-            dx:10,
-            dy: -20
-          },
-          target: {
-            // These can be expressed in our data units if passed under the data keys
-            [xKey]: '6',
-            [yKey]: 10,
-            // Optional adjustments
-            dx: -10,
-            dy: 0
-          }
-        }
-      ]
-    },
-  ];
-  newData.forEach((d) => {
-    d[yKey] = +d[yKey];
-  });
+const xKey = "key";
+const yKey = "value";
 
-  //// (Optional) Custom functions
-  const colorFunction = (d) => {
-    return d.category === newData[0].category
-      ? "var(--clr-primary-5)"
-      : "var(--clr-primary-3)";
-  };
+const annotations = [
+  {
+    text: "Dream scenario",
+    [xKey]: "6",
+    [yKey]: 10,
+    dx: -45, // Optional pixel values
+    dy: 15,
+    // ,
+    // arrows: [
+    //   {
+    //     clockwise: true, // true or false, defaults to true
+    //     source: {
+    //       anchor: 'left-bottom', // can be `{left, middle, right},{top-middle-bottom}`
+    //       dx:10,
+    //       dy: -20
+    //     },
+    //     target: {
+    //       // These can be expressed in our data units if passed under the data keys
+    //       [xKey]: '6',
+    //       [yKey]: 10,
+    //       // Optional adjustments
+    //       dx: -10,
+    //       dy: 0
+    //     }
+    //   }
+    //   ]
+  },
+];
+newData.forEach((d) => {
+  d[yKey] = +d[yKey];
+});
 
-  const labelFunction = (d) => {
-    return `${d.key} ${d.key == 1 ? d.category.slice(0, -1) : d.category}`;
-  };
+//// (Optional) Custom functions
+const colorFunction = (d) => {
+  // return d.category === newData[0].category
+  //   ? "var(--clr-primary-5)"
+  //   : "var(--clr-primary-3)";
+  return "var(--clr-primary-6)";
+};
 
-  const custom = {
-    ariaLabel: "Number of pets VS levels of happiness",
-    colorFunction,
-    labelFunction,
-    tooltipId: "scatterplotId",
-  };
+const labelFunction = (d) => {
+  return `${d.key} ${d.key == 1 ? d.category.slice(0, -1) : d.category}`;
+};
 
-  //// Configuration
-  const config = {
-    ...scatterplotConfig,
-    data: newData,
-    // xDomain: [0, 10],  // uncomment if you need to set a custom domain
-    // xPadding: [10, 10] // This is useful for adding extra space to a scatter plot so that your circles don't interfere with your y-axis. It's better than fussing with the range since you don't need to add a magic number to other components, like axes
-    custom,
-  };
+const custom = {
+  ariaLabel: "Number of pets VS levels of happiness",
+  colorFunction,
+  labelFunction,
+  tooltipId: "scatterplotId",
+};
+
+//// Configuration
+const config = {
+  ...scatterplotConfig,
+  data: newData,
+  // xDomain: [0, 10],  // uncomment if you need to set a custom domain
+  // xPadding: [10, 10] // This is useful for adding extra space to a scatter plot so that your circles don't interfere with your y-axis. It's better than fussing with the range since you don't need to add a magic number to other components, like axes
+  custom,
+};
 </script>
 
 <Tooltip tooltipId={"scatterplotId"} let:tooltipDatum>
@@ -99,12 +102,12 @@
 </div>
 
 <style>
-  /*
+/*
     The wrapper div needs to have an explicit width and height in CSS.
   */
-  .chart-container {
-    height: 20rem;
-    width: 100%;
-    margin-bottom: 5rem;
-  }
+.chart-container {
+  height: 20rem;
+  width: 100%;
+  margin-bottom: 5rem;
+}
 </style>
