@@ -62,7 +62,7 @@
       </h2>
       <p>
         This website is designed to showcase what
-        I have learned in 2024 and how I have built my tech stack, as someone who is not a developer by trade.
+        I have learned since 2024 and how I have built my tech stack, as someone who is not a developer by trade.
       </p>
     </div>
     <div class="step1">
