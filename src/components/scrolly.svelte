@@ -181,7 +181,7 @@
         are already a HTML, CSS, JavaScript, and data visualisation wizard.
         <strong>My advice</strong>
         There are many other libraries that can help you with scrollytelling (see
-        <a href="https://bsky.app/profile/carlbergstrom.com/post/3lbdskjzjz22w">
+        <a href="https://bsky.app/profile/carlbergstrom.com/post/3lbdskjzjz22w" target="_blank">
           this Bluesky thread</a
         >), personally I have been taught the IntersectionObserver method.
       </p>
