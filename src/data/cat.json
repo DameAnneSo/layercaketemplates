@@ -1,0 +1,611 @@
+[
+  {
+    "country": "Montenegro",
+    "code": "ME",
+    "id": "499",
+    "cat_population": 200000,
+    "cat_per_capita": 0.32
+  },
+  {
+    "country": "Slovenia",
+    "code": "SI",
+    "id": "705",
+    "cat_population": 500000,
+    "cat_per_capita": 0.24
+  },
+  {
+    "country": "France",
+    "code": "FR",
+    "id": "250",
+    "cat_population": 14900000,
+    "cat_per_capita": 0.22
+  },
+  {
+    "country": "Estonia",
+    "code": "EE",
+    "id": "233",
+    "cat_population": 300000,
+    "cat_per_capita": 0.22
+  },
+  {
+    "country": "Latvia",
+    "code": "LV",
+    "id": "428",
+    "cat_population": 400000,
+    "cat_per_capita": 0.22
+  },
+  {
+    "country": "United States",
+    "code": "US",
+    "id": "840",
+    "cat_population": 74200000,
+    "cat_per_capita": 0.21
+  },
+  {
+    "country": "Ukraine",
+    "code": "UA",
+    "id": "804",
+    "cat_population": 7900000,
+    "cat_per_capita": 0.2
+  },
+  {
+    "country": "Austria",
+    "code": "AT",
+    "id": "040",
+    "cat_population": 1800000,
+    "cat_per_capita": 0.2
+  },
+  {
+    "country": "Finland",
+    "code": "FI",
+    "id": "246",
+    "cat_population": 1100000,
+    "cat_per_capita": 0.2
+  },
+  {
+    "country": "Belgium",
+    "code": "BE",
+    "id": "056",
+    "cat_population": 2200000,
+    "cat_per_capita": 0.19
+  },
+  {
+    "country": "Canada",
+    "code": "CA",
+    "id": "124",
+    "cat_population": 7400000,
+    "cat_per_capita": 0.18
+  },
+  {
+    "country": "Denmark",
+    "code": "DK",
+    "id": "208",
+    "cat_population": 1100000,
+    "cat_per_capita": 0.18
+  },
+  {
+    "country": "Croatia",
+    "code": "HR",
+    "id": "191",
+    "cat_population": 700000,
+    "cat_per_capita": 0.18
+  },
+  {
+    "country": "Germany",
+    "code": "DE",
+    "id": "276",
+    "cat_population": 15200000,
+    "cat_per_capita": 0.18
+  },
+  {
+    "country": "Norway",
+    "code": "NO",
+    "id": "578",
+    "cat_population": 1000000,
+    "cat_per_capita": 0.18
+  },
+  {
+    "country": "Italy",
+    "code": "IT",
+    "id": "380",
+    "cat_population": 10500000,
+    "cat_per_capita": 0.18
+  },
+  {
+    "country": "Lithuania",
+    "code": "LT",
+    "id": "440",
+    "cat_population": 500000,
+    "cat_per_capita": 0.18
+  },
+  {
+    "country": "United Kingdom",
+    "code": "GB",
+    "id": "826",
+    "cat_population": 12200000,
+    "cat_per_capita": 0.18
+  },
+  {
+    "country": "Poland",
+    "code": "PL",
+    "id": "616",
+    "cat_population": 6600000,
+    "cat_per_capita": 0.17
+  },
+  {
+    "country": "New Zealand",
+    "code": "NZ",
+    "id": "554",
+    "cat_population": 900000,
+    "cat_per_capita": 0.17
+  },
+  {
+    "country": "Sweden",
+    "code": "SE",
+    "id": "752",
+    "cat_population": 1800000,
+    "cat_per_capita": 0.17
+  },
+  {
+    "country": "North Macedonia",
+    "code": "MK",
+    "id": "807",
+    "cat_population": 300000,
+    "cat_per_capita": 0.17
+  },
+  {
+    "country": "Netherlands",
+    "code": "NL",
+    "id": "528",
+    "cat_population": 3000000,
+    "cat_per_capita": 0.16
+  },
+  {
+    "country": "Greece",
+    "code": "GR",
+    "id": "300",
+    "cat_population": 1600000,
+    "cat_per_capita": 0.16
+  },
+  {
+    "country": "Russia",
+    "code": "RU",
+    "id": "643",
+    "cat_population": 23100000,
+    "cat_per_capita": 0.16
+  },
+  {
+    "country": "Switzerland",
+    "code": "CH",
+    "id": "756",
+    "cat_population": 1400000,
+    "cat_per_capita": 0.16
+  },
+  {
+    "country": "Ireland",
+    "code": "IE",
+    "id": "372",
+    "cat_population": 800000,
+    "cat_per_capita": 0.15
+  },
+  {
+    "country": "Australia",
+    "code": "AU",
+    "id": "036",
+    "cat_population": 3900000,
+    "cat_per_capita": 0.14
+  },
+  {
+    "country": "Armenia",
+    "code": "AM",
+    "id": "051",
+    "cat_population": 400000,
+    "cat_per_capita": 0.14
+  },
+  {
+    "country": "Hungary",
+    "code": "HU",
+    "id": "348",
+    "cat_population": 1300000,
+    "cat_per_capita": 0.13
+  },
+  {
+    "country": "Spain",
+    "code": "ES",
+    "id": "724",
+    "cat_population": 6400000,
+    "cat_per_capita": 0.13
+  },
+  {
+    "country": "Moldova",
+    "code": "MD",
+    "id": "498",
+    "cat_population": 400000,
+    "cat_per_capita": 0.13
+  },
+  {
+    "country": "Georgia",
+    "code": "GE",
+    "id": "268",
+    "cat_population": 500000,
+    "cat_per_capita": 0.13
+  },
+  {
+    "country": "Portugal",
+    "code": "PT",
+    "id": "620",
+    "cat_population": 1300000,
+    "cat_per_capita": 0.12
+  },
+  {
+    "country": "Czechia",
+    "code": "CZ",
+    "id": "203",
+    "cat_population": 1200000,
+    "cat_per_capita": 0.11
+  },
+  {
+    "country": "Kazakhstan",
+    "code": "KZ",
+    "id": "398",
+    "cat_population": 2000000,
+    "cat_per_capita": 0.1
+  },
+  {
+    "country": "Bosnia and Herzegovina",
+    "code": "BA",
+    "id": "070",
+    "cat_population": 300000,
+    "cat_per_capita": 0.1
+  },
+  {
+    "country": "Turkmenistan",
+    "code": "TM",
+    "id": "795",
+    "cat_population": 700000,
+    "cat_per_capita": 0.09
+  },
+  {
+    "country": "Serbia",
+    "code": "RS",
+    "id": "688",
+    "cat_population": 600000,
+    "cat_per_capita": 0.09
+  },
+  {
+    "country": "Bulgaria",
+    "code": "BG",
+    "id": "100",
+    "cat_population": 600000,
+    "cat_per_capita": 0.09
+  },
+  {
+    "country": "United Arab Emirates",
+    "code": "AE",
+    "id": "784",
+    "cat_population": 1000000,
+    "cat_per_capita": 0.09
+  },
+  {
+    "country": "Romania",
+    "code": "RO",
+    "id": "642",
+    "cat_population": 1500000,
+    "cat_per_capita": 0.08
+  },
+  {
+    "country": "Japan",
+    "code": "JP",
+    "id": "392",
+    "cat_population": 9600000,
+    "cat_per_capita": 0.08
+  },
+  {
+    "country": "Belarus",
+    "code": "BY",
+    "id": "112",
+    "cat_population": 700000,
+    "cat_per_capita": 0.08
+  },
+  {
+    "country": "Azerbaijan",
+    "code": "AZ",
+    "id": "031",
+    "cat_population": 800000,
+    "cat_per_capita": 0.08
+  },
+  {
+    "country": "Argentina",
+    "code": "AR",
+    "id": "032",
+    "cat_population": 3200000,
+    "cat_per_capita": 0.07
+  },
+  {
+    "country": "Kyrgyzstan",
+    "code": "KG",
+    "id": "417",
+    "cat_population": 500000,
+    "cat_per_capita": 0.07
+  },
+  {
+    "country": "Libya",
+    "code": "LY",
+    "id": "434",
+    "cat_population": 500000,
+    "cat_per_capita": 0.07
+  },
+  {
+    "country": "Brazil",
+    "code": "BR",
+    "id": "076",
+    "cat_population": 13000000,
+    "cat_per_capita": 0.06
+  },
+  {
+    "country": "Botswana",
+    "code": "BW",
+    "id": "072",
+    "cat_population": 150000,
+    "cat_per_capita": 0.06
+  },
+  {
+    "country": "Malaysia",
+    "code": "MY",
+    "id": "458",
+    "cat_population": 2000000,
+    "cat_per_capita": 0.06
+  },
+  {
+    "country": "Mexico",
+    "code": "MX",
+    "id": "484",
+    "cat_population": 7000000,
+    "cat_per_capita": 0.05
+  },
+  {
+    "country": "Tunisia",
+    "code": "TN",
+    "id": "788",
+    "cat_population": 600000,
+    "cat_per_capita": 0.05
+  },
+  {
+    "country": "Saudi Arabia",
+    "code": "SA",
+    "id": "682",
+    "cat_population": 1500000,
+    "cat_per_capita": 0.04
+  },
+  {
+    "country": "Thailand",
+    "code": "TH",
+    "id": "764",
+    "cat_population": 3000000,
+    "cat_per_capita": 0.04
+  },
+  {
+    "country": "South Korea",
+    "code": "KR",
+    "id": "410",
+    "cat_population": 2000000,
+    "cat_per_capita": 0.04
+  },
+  {
+    "country": "China",
+    "code": "CN",
+    "id": "156",
+    "cat_population": 53100000,
+    "cat_per_capita": 0.04
+  },
+  {
+    "country": "Tajikistan",
+    "code": "TJ",
+    "id": "762",
+    "cat_population": 400000,
+    "cat_per_capita": 0.04
+  },
+  {
+    "country": "Chile",
+    "code": "CL",
+    "id": "152",
+    "cat_population": 700000,
+    "cat_per_capita": 0.04
+  },
+  {
+    "country": "Namibia",
+    "code": "NA",
+    "id": "516",
+    "cat_population": 100000,
+    "cat_per_capita": 0.03
+  },
+  {
+    "country": "Algeria",
+    "code": "DZ",
+    "id": "012",
+    "cat_population": 1500000,
+    "cat_per_capita": 0.03
+  },
+  {
+    "country": "Turkey",
+    "code": "TR",
+    "id": "792",
+    "cat_population": 2400000,
+    "cat_per_capita": 0.03
+  },
+  {
+    "country": "Uzbekistan",
+    "code": "UZ",
+    "id": "860",
+    "cat_population": 1000000,
+    "cat_per_capita": 0.03
+  },
+  {
+    "country": "Jordan",
+    "code": "JO",
+    "id": "400",
+    "cat_population": 300000,
+    "cat_per_capita": 0.03
+  },
+  {
+    "country": "Morocco",
+    "code": "MA",
+    "id": "504",
+    "cat_population": 1000000,
+    "cat_per_capita": 0.03
+  },
+  {
+    "country": "Iran",
+    "code": "IR",
+    "id": "364",
+    "cat_population": 2000000,
+    "cat_per_capita": 0.02
+  },
+  {
+    "country": "Egypt",
+    "code": "EG",
+    "id": "818",
+    "cat_population": 2500000,
+    "cat_per_capita": 0.02
+  },
+  {
+    "country": "Zimbabwe",
+    "code": "ZW",
+    "id": "716",
+    "cat_population": 350000,
+    "cat_per_capita": 0.02
+  },
+  {
+    "country": "Pakistan",
+    "code": "PK",
+    "id": "586",
+    "cat_population": 5000000,
+    "cat_per_capita": 0.02
+  },
+  {
+    "country": "Papua New Guinea",
+    "code": "PG",
+    "id": "598",
+    "cat_population": 200000,
+    "cat_per_capita": 0.02
+  },
+  {
+    "country": "Kenya",
+    "code": "KE",
+    "id": "404",
+    "cat_population": 1000000,
+    "cat_per_capita": 0.02
+  },
+  {
+    "country": "Ghana",
+    "code": "GH",
+    "id": "288",
+    "cat_population": 500000,
+    "cat_per_capita": 0.01
+  },
+  {
+    "country": "South Africa",
+    "code": "ZA",
+    "id": "710",
+    "cat_population": 900000,
+    "cat_per_capita": 0.01
+  },
+  {
+    "country": "Nigeria",
+    "code": "NG",
+    "id": "566",
+    "cat_population": 3000000,
+    "cat_per_capita": 0.01
+  },
+  {
+    "country": "Ivory Coast",
+    "code": "CI",
+    "id": "384",
+    "cat_population": 400000,
+    "cat_per_capita": 0.01
+  },
+  {
+    "country": "Syria",
+    "code": "SY",
+    "id": "760",
+    "cat_population": 300000,
+    "cat_per_capita": 0.01
+  },
+  {
+    "country": "Zambia",
+    "code": "ZM",
+    "id": "894",
+    "cat_population": 250000,
+    "cat_per_capita": 0.01
+  },
+  {
+    "country": "Iraq",
+    "code": "IQ",
+    "id": "368",
+    "cat_population": 500000,
+    "cat_per_capita": 0.01
+  },
+  {
+    "country": "Cameroon",
+    "code": "CM",
+    "id": "120",
+    "cat_population": 300000,
+    "cat_per_capita": 0.01
+  },
+  {
+    "country": "Tanzania",
+    "code": "TZ",
+    "id": "834",
+    "cat_population": 700000,
+    "cat_per_capita": 0.01
+  },
+  {
+    "country": "Madagascar",
+    "code": "MG",
+    "id": "450",
+    "cat_population": 300000,
+    "cat_per_capita": 0.01
+  },
+  {
+    "country": "Indonesia",
+    "code": "ID",
+    "id": "360",
+    "cat_population": 2500000,
+    "cat_per_capita": 0.01
+  },
+  {
+    "country": "Philippines",
+    "code": "PH",
+    "id": "608",
+    "cat_population": 1000000,
+    "cat_per_capita": 0.01
+  },
+  {
+    "country": "Ethiopia",
+    "code": "ET",
+    "id": "231",
+    "cat_population": 1000000,
+    "cat_per_capita": 0.01
+  },
+  {
+    "country": "Vietnam",
+    "code": "VN",
+    "id": "704",
+    "cat_population": 700000,
+    "cat_per_capita": 0.01
+  },
+  {
+    "country": "Afghanistan",
+    "code": "AFG",
+    "id": "004",
+    "cat_population": 300000,
+    "cat_per_capita": 0.01
+  },
+  {
+    "country": "India",
+    "code": "IN",
+    "id": "356",
+    "cat_population": 10000000,
+    "cat_per_capita": 0.01
+  }
+]

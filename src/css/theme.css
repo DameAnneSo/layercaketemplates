@@ -97,6 +97,29 @@ small {
   font-family: var(--ff-secondary);
 }
 
+.chart-meta {
+  margin: 0 0 2rem 0;
+  text-align: left;
+}
+
+.chart-meta p {
+  color: var(--clr-grey-2);
+  font-size: clamp(0.7rem, 1.2vw, 0.95rem);
+  margin-bottom: 0;
+}
+
+.chart-meta a {
+  color: var(--clr-grey-2);
+  text-decoration: underline var(--clr-primary-5) 0.1em;
+  margin-bottom: 0.25rem;
+}
+
+.chart-meta a:hover,
+.chart-meta a:focus {
+  text-decoration: underline var(--clr-primary-3) 0.2em;
+  text-underline-offset: 2px;
+}
+
 @media screen and (max-width: 800px) {
   h1 {
     font-size: 2rem;
